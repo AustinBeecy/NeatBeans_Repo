@@ -11,6 +11,6 @@ package netbeans_hw1;
 public class Employee {
     String name; 
     String Id; 
-    int sallary; 
+    int salary; 
     int phone; 
 }
