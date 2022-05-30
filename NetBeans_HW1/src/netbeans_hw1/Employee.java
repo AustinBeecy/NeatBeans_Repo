@@ -13,4 +13,38 @@ public class Employee {
     String Id; 
     int salary; 
     int phone; 
+   
+    //getters and setters for Employee Class
+    
+    public String name()
+   {
+     return this.name;
+   }
+   public void setName(String name)
+   {
+       this.name = name; 
+   }
+   public String getID()
+   {
+     return this.Id;
+   }
+   public void setID(String Id)
+   {
+       this.Id = Id; 
+   }
+    public int getSalary()
+   {
+     return this.salary;
+   }
+   public void setSalary(int salary)
+   {
+       this.salary = salary; 
+   }
+   public int getPhone()
+   {
+     return this.phone;
+   }
+   public void setPhone(int phone)
+   {
+       this.phone = phone;
 }

@@ -43,7 +43,7 @@ public class StoreArea {
    {
      return this.state;
    }
-   public void setStaet(String state)
+   public void setState(String state)
    {
        this.state = state; 
    }
