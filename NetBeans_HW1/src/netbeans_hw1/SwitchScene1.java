@@ -1,5 +1,6 @@
 package netbeans_hw1;
 
+import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -16,32 +17,57 @@ import javafx.stage.Stage;
 public class SwitchScene1 extends Application {
     
     Stage window;
-    Scene scene1, scene2;
+    Scene scene1, scene2, stores, storeOptions; 
     
     @Override
     public void start (Stage primaryStage) throws Exception {
         window = primaryStage;
         
-        // Button 1
-        Label label1 = new Label("Welcome!");
-        Button button1 = new Button("Go to scene 2");
-        button1.setOnAction(e -> window.setScene(scene2));
+        // Store Scene 
+        // Rund SQL query to get store locations
+        // gnerate lables from SQL Query with a for loop 
+        ArrayList<Label> storeLabels = new ArrayList<Label>(); 
+        storeLabels.add(new Label("City 1")); // will be replaced with sql results
+        storeLabels.add(new Label("City 2")); // will be replaced with sql results
         
-        // Layout 1
-        VBox layout1 = new VBox(20);
-        layout1.getChildren().addAll(label1, button1);
-        scene1 = new Scene(layout1, 500, 300);
+        // same replace buttons with sql results in for loop 
+        ArrayList<Button> storeButtons = new ArrayList<Button>(); 
+        storeButtons.add(new Button("City Location 1")); // replace with sql results
+        storeButtons.add(new Button("City Location 2")); // replace with sql results 
         
-        // Button 2
-        Button button2 = new Button("Back to scene 1");
-        button2.setOnAction(e -> window.setScene(scene1));
+       // create layout for stores
+        VBox storeLayout = new VBox(20);
         
-        //Layout 2
-        StackPane layout2 = new StackPane();
-        layout2.getChildren().add(button2);
-        scene2 = new Scene(layout2, 500, 300);
+        //populate stores layout with labels and buttons 
+        for(int i = 0; i < storeLabels.size(); i++){
+            storeLayout.getChildren().add(storeLabels.get(i));
+            // for loop for buttons 
+            storeLayout.getChildren().add(storeButtons.get(i));
+            storeButtons.get(i).setOnAction(e -> window.setScene(scene2));
+        }
+        // create stores scene 
+        stores = new Scene(storeLayout, 500, 300);
         
-        window.setScene(scene1);
+        //Create Label for store option
+        Label welcomeLabel = new Label("Welcome!"); 
+        // create buttons for store options 
+        ArrayList<Button> storeOptionsButtons = new ArrayList<Button>(); 
+        storeOptionsButtons.add(new Button("Employes"));
+        storeOptionsButtons.add(new Button("Products"));
+        storeOptionsButtons.add(new Button("Store Areas"));
+        storeOptionsButtons.add(new Button("Suppliers"));
+        storeOptionsButtons.add(new Button("Inventory"));
+        //create layout for store options 
+        VBox storeOptionsLayout = new VBox(20);
+        storeOptionsLayout.getChildren().add(welcomeLabel);
+        for(Button storeOptionsButton: storeOptionsButtons){
+            storeOptionsLayout.getChildren().add(storeOptionsButton);
+            storeOptionsButton.setOnAction(e -> window.setScene(stores));
+        }
+        //create scene 
+        scene2 = new Scene(storeOptionsLayout, 500, 300);
+        
+        window.setScene(stores);
         window.setTitle("TITLE!");
         window.show();
     }
