@@ -14,4 +14,38 @@ public class StoreArea {
     String name;
     String description;
     String state;
+    
+     public String getareaID()
+   {
+     return this.areaID;
+   }
+   public void setAreaId(String areaID)
+   {
+       this.areaID = areaID; 
+   }
+    public String getName()
+   {
+     return this.name;
+   }
+   public void setName(String name)
+   {
+       this.name = name; 
+   }    
+ public String getDescription()
+   {
+     return this.description;
+   }
+   public void setDescription(String description)
+   {
+       this.description = description;
+   }
+    public String getstate()
+   {
+     return this.state;
+   }
+   public void setStaet(String state)
+   {
+       this.state = state; 
+   }
+   
 }
