@@ -52,7 +52,7 @@ public class SwitchScene1 extends Application {
         Label welcomeLabel = new Label("Welcome!"); 
         // create buttons for store options 
         ArrayList<Button> storeOptionsButtons = new ArrayList<Button>(); 
-        storeOptionsButtons.add(new Button("Employes"));
+        storeOptionsButtons.add(new Button("Employees"));
         storeOptionsButtons.add(new Button("Products"));
         storeOptionsButtons.add(new Button("Store Areas"));
         storeOptionsButtons.add(new Button("Suppliers"));
