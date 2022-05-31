@@ -37,7 +37,7 @@ public class SwitchScene1 extends Application {
         
     @Override
     public void start(Stage primaryStage) throws Exception {
-        conn = conOracle("emp", "emp");
+        conn = conOracle("javauser", "javapass");
         stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
         ResultSet employee = stmt.executeQuery("select * from Employee");
         ResultSet store = stmt.executeQuery("select * from Store");
