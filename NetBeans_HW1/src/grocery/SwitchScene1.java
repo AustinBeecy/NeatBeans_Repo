@@ -1,7 +1,6 @@
 package grocery;
 
-import static grocery.DatabaseConnect.conOracle;
-import static grocery.NetBeans_HW1.conn;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -13,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import oracle.jdbc.pool.OracleDataSource;
 
 /**
  *
@@ -26,6 +26,13 @@ public class SwitchScene1 extends Application {
     Stage window;
     Scene scene1, scene2, stores, storeOptions; 
     
+        static Connection conOracle(String id, String pw) throws Exception {
+        String connectionString = "jdbc:oracle:thin:@localhost:1521:XE";
+        OracleDataSource ds = new OracleDataSource();   
+        ds.setURL(connectionString);
+        return ds.getConnection(id, pw);
+    }
+        
     @Override
     public void start(Stage primaryStage) throws Exception {
         conn = conOracle("emp", "emp");
@@ -58,7 +65,7 @@ public class SwitchScene1 extends Application {
         // ** Probably won't work with different data, ex multiple cities in VA all under VA state. 
         ArrayList<Button> storeButtons = new ArrayList<Button>();
         while (store.next()) {
-            storeLabels.add(new Label(store.getString("State")));
+            storeLabels.add(new Label("Available stores in " + store.getString("State")));
             storeButtons.add(new Button(store.getString("City")));
         }
         
@@ -73,7 +80,7 @@ public class SwitchScene1 extends Application {
             storeButtons.get(i).setOnAction(e -> window.setScene(scene2));
         }
         // create stores scene 
-        stores = new Scene(storeLayout, 500, 300);
+        stores = new Scene(storeLayout, 500, 400);
         
         //Create Label for store option
         Label welcomeLabel = new Label("Welcome!"); 
@@ -92,10 +99,10 @@ public class SwitchScene1 extends Application {
             storeOptionsButton.setOnAction(e -> window.setScene(stores));
         }
         //create scene 
-        scene2 = new Scene(storeOptionsLayout, 500, 300);
+        scene2 = new Scene(storeOptionsLayout, 500, 400);
         
         window.setScene(stores);
-        window.setTitle("TITLE!");
+        window.setTitle("Store Selection");
         window.show();
     }
     
