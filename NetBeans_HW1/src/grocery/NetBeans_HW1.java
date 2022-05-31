@@ -1,31 +1,39 @@
 package grocery;
 
-import static grocery.DatabaseConnect.conOracle;
-import static grocery.NetBeans_HW1.conn;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import javafx.application.Application;
+import static javafx.application.Application.launch;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import oracle.jdbc.pool.OracleDataSource;
 
 /**
  *
- * @author coolm
  */
+public class NetBeans_HW1 extends Application {
 
-public class SwitchScene1 extends Application {
     Statement stmt;
     static Connection conn;
-    
+
+    static Connection conOracle(String id, String pw) throws Exception {
+        String connectionString = "jdbc:oracle:thin:@localhost:1521:XE";
+        OracleDataSource ds = new OracleDataSource();
+        ds.setURL(connectionString);
+        return ds.getConnection(id, pw);
+    }
+
     Stage window;
-    Scene scene1, scene2, stores, storeOptions; 
-    
+    Scene scene1, scene2, stores, storeOptions;
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         conn = conOracle("emp", "emp");
@@ -50,23 +58,22 @@ public class SwitchScene1 extends Application {
         // generate lables from SQL Query with a for loop 
         ArrayList<Label> storeLabels = new ArrayList<Label>();
         
-        
-//        storeLabels.add(new Label("Virginia")); // will be replaced with sql results
-//        storeLabels.add(new Label("Tennessee")); // will be replaced with sql results
+        storeLabels.add(new Label("City 1")); // will be replaced with sql results
+        storeLabels.add(new Label("City 2")); // will be replaced with sql results
 
         // same replace buttons with sql results in for loop 
-        // ** Probably won't work with different data, ex multiple cities in VA all under VA state. 
         ArrayList<Button> storeButtons = new ArrayList<Button>();
         while (store.next()) {
-            storeLabels.add(new Label(store.getString("State")));
             storeButtons.add(new Button(store.getString("City")));
         }
-        
-       // create layout for stores
+//        storeButtons.add(new Button("City Location 1")); // replace with sql results
+//        storeButtons.add(new Button("City Location 2")); // replace with sql results 
+
+        // create layout for stores
         VBox storeLayout = new VBox(20);
-        
+
         //populate stores layout with labels and buttons 
-        for(int i = 0; i < storeLabels.size(); i++){
+        for (int i = 0; i < storeLabels.size(); i++) {
             storeLayout.getChildren().add(storeLabels.get(i));
             // for loop for buttons 
             storeLayout.getChildren().add(storeButtons.get(i));
@@ -74,11 +81,11 @@ public class SwitchScene1 extends Application {
         }
         // create stores scene 
         stores = new Scene(storeLayout, 500, 300);
-        
+
         //Create Label for store option
-        Label welcomeLabel = new Label("Welcome!"); 
+        Label welcomeLabel = new Label("Welcome!");
         // create buttons for store options 
-        ArrayList<Button> storeOptionsButtons = new ArrayList<Button>(); 
+        ArrayList<Button> storeOptionsButtons = new ArrayList<Button>();
         storeOptionsButtons.add(new Button("Employees"));
         storeOptionsButtons.add(new Button("Products"));
         storeOptionsButtons.add(new Button("Store Areas"));
@@ -87,19 +94,20 @@ public class SwitchScene1 extends Application {
         //create layout for store options 
         VBox storeOptionsLayout = new VBox(20);
         storeOptionsLayout.getChildren().add(welcomeLabel);
-        for(Button storeOptionsButton: storeOptionsButtons){
+        for (Button storeOptionsButton : storeOptionsButtons) {
             storeOptionsLayout.getChildren().add(storeOptionsButton);
             storeOptionsButton.setOnAction(e -> window.setScene(stores));
         }
         //create scene 
         scene2 = new Scene(storeOptionsLayout, 500, 300);
-        
+
         window.setScene(stores);
         window.setTitle("TITLE!");
         window.show();
     }
-    
+
     public static void main(String[] args) {
         launch(args);
     }
+
 }

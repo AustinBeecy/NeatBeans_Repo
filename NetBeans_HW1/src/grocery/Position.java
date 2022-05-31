@@ -1,5 +1,5 @@
 
-package netbeans_hw1;
+package grocery;
 
 /**
  *
