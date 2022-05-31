@@ -1,6 +1,5 @@
 package grocery;
 
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -15,8 +14,8 @@ import javafx.stage.Stage;
 import oracle.jdbc.pool.OracleDataSource;
 
 
-//For ID numbers, when CREATING a new record, always let the system create the ID number for the user. 
-//Never let the User choose what ID number to type in for a new record (as this can cause DB disaster!).
+// For ID numbers, when CREATING a new record, always let the system create the ID number for the user. 
+// Never let the User choose what ID number to type in for a new record (as this can cause DB disaster!).
 // Try to never have the user type in an ID number for any kind of selection. Remember that when giving the user the choice to edit a record, 
 // always present them with a list of records to select from FIRST, so that they can indicate what record (product, employee, etc.) to change, 
 // then populate a data entry form with that info, allowing them to only change the 1 or 2 fields they want to edit, then save.
@@ -59,7 +58,6 @@ public class SwitchScene1 extends Application {
         // generate lables from SQL Query with a for loop 
         ArrayList<Label> storeLabels = new ArrayList<Label>();
         
-        
 //        storeLabels.add(new Label("Virginia")); // will be replaced with sql results
 //        storeLabels.add(new Label("Tennessee")); // will be replaced with sql results
 
@@ -81,6 +79,7 @@ public class SwitchScene1 extends Application {
             storeLayout.getChildren().add(storeButtons.get(i));
             storeButtons.get(i).setOnAction(e -> window.setScene(scene2));
         }
+        
         // create stores scene 
         stores = new Scene(storeLayout, 500, 400);
         
