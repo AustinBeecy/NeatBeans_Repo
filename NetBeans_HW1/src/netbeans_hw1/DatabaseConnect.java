@@ -36,12 +36,12 @@ public class DatabaseConnect extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         // quering database and storing in result set
-        conn = conOracle("emp", "emp");// LOG IN WITH USER NAME AND PW
+        conn = conOracle("javauser", "javapass");// LOG IN WITH USER NAME AND PW
         Statement stmt = conn.createStatement(
                 ResultSet.TYPE_SCROLL_INSENSITIVE,
                 ResultSet.CONCUR_UPDATABLE);
         ResultSet rs;
-        rs = stmt.executeQuery("select * from Employee");
+        rs = stmt.executeQuery("select * from employee");
 
         String id = null;
         String first = null;

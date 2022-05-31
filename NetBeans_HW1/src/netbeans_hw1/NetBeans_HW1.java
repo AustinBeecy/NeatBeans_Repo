@@ -42,7 +42,15 @@ public class NetBeans_HW1 extends Application{
 		
         ResultSet rs = stmt.executeQuery(sqlSelect);
         rs.next(); }
-    public static void main(String[] args) {
+    
+        //setting up all variables to match database with text fields and listeners
+        // to keep track of changes
+        
+        
+        
+        
+        
+        public static void main(String[] args) {
         launch(args);
     }
     

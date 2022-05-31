@@ -2,6 +2,7 @@ package netbeans_hw1;
 
 import java.util.ArrayList;
 import javafx.application.Application;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -37,8 +38,9 @@ public class SwitchScene1 extends Application {
         
        // create layout for stores
         VBox storeLayout = new VBox(20);
+        storeLayout.setAlignment(Pos.TOP_CENTER);
         
-        //populate stores layout with labels and buttons 
+//populate stores layout with labels and buttons 
         for(int i = 0; i < storeLabels.size(); i++){
             storeLayout.getChildren().add(storeLabels.get(i));
             // for loop for buttons 
@@ -71,8 +73,6 @@ public class SwitchScene1 extends Application {
         window.setTitle("TITLE!");
         window.show();
     }
-    
-    public static void main(String[] args) {
-        launch(args);
-    }
+  
 }
+
