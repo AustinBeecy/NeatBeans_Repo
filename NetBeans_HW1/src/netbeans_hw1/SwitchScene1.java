@@ -73,6 +73,8 @@ public class SwitchScene1 extends Application {
         window.setTitle("TITLE!");
         window.show();
     }
-  
+  public static void main(String[] args) {
+        launch(args);
+    }
 }
 
