@@ -5,7 +5,9 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -24,33 +26,19 @@ import oracle.jdbc.pool.OracleDataSource;
 public class SwitchScene1 extends Application {
     Statement stmt;
     static Connection conn;
-    
+    static String currentStore = null; 
     Stage window;
     Scene scene1, scene2, stores, storeOptions; 
     
-        static Connection conOracle(String id, String pw) throws Exception {
-        String connectionString = "jdbc:oracle:thin:@localhost:1521:XE";
-        OracleDataSource ds = new OracleDataSource();   
-        ds.setURL(connectionString);
-        return ds.getConnection(id, pw);
-    }
+   
         
     @Override
     public void start(Stage primaryStage) throws Exception {
         conn = conOracle("javauser", "javapass");
         stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-        ResultSet employee = stmt.executeQuery("select * from Employee");
+       // ResultSet employee = stmt.executeQuery("select * from Employee");
         ResultSet store = stmt.executeQuery("select * from Store");
-
-        try {
-
-            // Read in first values
-//            if (employee.next()) {
-//                System.out.println(employee.getString("Emp_ID"));
-//            }
-        } catch (Exception e) {
-            System.out.println("Error: " + e.toString());
-        }
+        
 
         window = primaryStage;
 
@@ -79,9 +67,14 @@ public class SwitchScene1 extends Application {
             storeLayout.getChildren().add(storeLabels.get(i));
             // for loop for buttons 
             storeLayout.getChildren().add(storeButtons.get(i));
-            storeButtons.get(i).setOnAction(e -> window.setScene(scene2));
+            storeButtons.get(i).setOnAction(e -> {
+              Button b = (Button) e.getSource(); 
+               pickStore(b.getText()); 
+                System.out.println(currentStore);
+                window.setScene(storeOptions);
+            });
         }
-        
+       
         // create stores scene 
         stores = new Scene(storeLayout, 500, 400);
         
@@ -105,13 +98,22 @@ public class SwitchScene1 extends Application {
             storeOptionsButton.setOnAction(e -> window.setScene(stores));
         }
         //create scene 
-        scene2 = new Scene(storeOptionsLayout, 500, 400);
-        
+        storeOptions = new Scene(storeOptionsLayout, 500, 400);
+//        Parent homeRoot = FXMLLoader.load(getClass().getResource("resources/storePick.fxml"));
+//        Scene test = new Scene(homeRoot);
         window.setScene(stores);
         window.setTitle("Store Selection");
         window.show();
     }
-    
+     static Connection conOracle(String id, String pw) throws Exception {
+        String connectionString = "jdbc:oracle:thin:@localhost:1521:XE";
+        OracleDataSource ds = new OracleDataSource();   
+        ds.setURL(connectionString);
+        return ds.getConnection(id, pw);
+    }
+    void pickStore(String button){
+        currentStore = button; 
+    }
     public static void main(String[] args) {
         launch(args);
     }
