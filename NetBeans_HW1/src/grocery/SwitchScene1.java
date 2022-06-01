@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -71,6 +72,7 @@ public class SwitchScene1 extends Application {
         
        // create layout for stores
         VBox storeLayout = new VBox(20);
+        storeLayout.setPadding(new Insets(20));
         
         //populate stores layout with labels and buttons 
         for(int i = 0; i < storeLabels.size(); i++){
@@ -92,8 +94,11 @@ public class SwitchScene1 extends Application {
         storeOptionsButtons.add(new Button("Store Areas"));
         storeOptionsButtons.add(new Button("Suppliers"));
         storeOptionsButtons.add(new Button("Inventory"));
+        
         //create layout for store options 
         VBox storeOptionsLayout = new VBox(20);
+        storeOptionsLayout.setPadding(new Insets(20));
+        
         storeOptionsLayout.getChildren().add(welcomeLabel);
         for(Button storeOptionsButton: storeOptionsButtons){
             storeOptionsLayout.getChildren().add(storeOptionsButton);
