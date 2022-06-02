@@ -7,13 +7,15 @@ package grocery;
  */
 public class Employee {
 
-    static String id;
-    static String name;
-    static String phone;
-    static String address;
-    static int salary;
-    static String shiftTime;
-
+    private String id;
+    private String name;
+    private String phone;
+    private String address;
+    private int salary;
+    private String shiftTime;
+    public Employee(){
+        
+    }
     public Employee(String id, String name, String phone, String address, int salary, String shiftTime) {
         this.id = id;
         this.name = name;

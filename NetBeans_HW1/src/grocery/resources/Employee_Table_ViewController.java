@@ -16,6 +16,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableView;
 
@@ -27,31 +28,34 @@ import javafx.scene.control.TableView;
 public class Employee_Table_ViewController implements Initializable {
     Connection conn; 
     Statement stmt; 
+       @FXML
+         TableView<Employee> table;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        OracleInterface oracle = new OracleInterface(); 
+          OracleInterface oracle = new OracleInterface(); 
          conn = oracle.getConnection();
          stmt = oracle.getStatement();
+         
+      
+            ResultSet rs;
+        try {
+            rs = stmt.executeQuery("select * from Employee");
+       
+            table = new TableView<Employee>();
+            ObservableList<Employee> data = FXCollections.observableArrayList();
 
-//
-//            ResultSet rs;
-//        try {
-//            rs = stmt.executeQuery("select * from Employee");
-//       
-//            TableView<Employee> table = new TableView<>();
-//            ObservableList<Employee> data = FXCollections.observableArrayList();
-//
-//            while (rs.next()) {
-//                Employee.id = rs.getString("Emp_ID");
-//                Employee.name = rs.getString("Emp_Name");
-//                Employee.phone = rs.getString("Emp_Phone");
-//                Employee.address = rs.getString("Emp_Address");
-//                Employee.salary = rs.getInt("Emp_Salary");
-//                Employee.shiftTime = rs.getString("Shift_Time");
+            while (rs.next()) {
+//                Employee employee = new Employee(); 
+//                employee.id = rs.getString("Emp_ID");
+//                employee.name = rs.getString("Emp_Name");
+//                employee.phone = rs.getString("Emp_Phone");
+//                employee.address = rs.getString("Emp_Address");
+//                employee.salary = rs.getInt("Emp_Salary");
+//                employee.shiftTime = rs.getString("Shift_Time");
 //
 //                System.out.println(Employee.id);
 //                System.out.println(Employee.name);
@@ -59,19 +63,26 @@ public class Employee_Table_ViewController implements Initializable {
 //                System.out.println(Employee.address);
 //                System.out.println(Employee.salary);
 //                System.out.println(Employee.shiftTime);
-//
-//                data.add(new Employee(
-//                        rs.getString("Emp_ID"), 
-//                        rs.getString("Emp_Name"), 
-//                        rs.getString("Emp_Phone"),
-//                        rs.getString("Emp_Address"),
-//                        rs.getInt("Emp_Salary"),
-//                        rs.getString("Shift_Time")
-//                ));
-//        }
-//             } catch (SQLException ex) {
-//            Logger.getLogger(Employee_Table_ViewController.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+
+                data.add(new Employee(
+                        rs.getString("Emp_ID"), 
+                        rs.getString("Emp_Name"), 
+                        rs.getString("Emp_Phone"),
+                        rs.getString("Emp_Address"),
+                        rs.getInt("Emp_Salary"),
+                        rs.getString("Shift_Time")
+                ));
+        }
+            for(Employee d: data){
+            
+            table.setItems(data);
+            }
+            
+            
+             } catch (SQLException ex) {
+            Logger.getLogger(Employee_Table_ViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }    
     
 }
