@@ -20,6 +20,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import oracle.jdbc.pool.OracleDataSource;
 
 // For ID numbers, when CREATING a new record, always let the system create the ID number for the user. 
 // Never let the User choose what ID number to type in for a new record (as this can cause DB disaster!).
@@ -33,7 +34,7 @@ public class SwitchScene1 extends Application {
 
     static Connection conOracle(String id, String pw) throws Exception {
         String connectionString = "jdbc:oracle:thin:@localhost:1521:XE";
-        OracleDataSource ds = new OracleDataSource();
+        OracleDatazSource ds = new OracleDataSource();
         ds.setURL(connectionString);
         return ds.getConnection(id, pw);
     }
