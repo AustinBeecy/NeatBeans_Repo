@@ -29,7 +29,9 @@ public class Employee_Table_ViewController implements Initializable {
     Connection conn; 
     Statement stmt; 
        @FXML
-         TableView<Employee> table;
+        TableView<Employee> table;
+       
+       
     /**
      * Initializes the controller class.
      */
@@ -39,30 +41,15 @@ public class Employee_Table_ViewController implements Initializable {
           OracleInterface oracle = new OracleInterface(); 
          conn = oracle.getConnection();
          stmt = oracle.getStatement();
-         
-      
-            ResultSet rs;
-        try {
+          ResultSet rs;
+        
+          try {
             rs = stmt.executeQuery("select * from Employee");
        
             table = new TableView<Employee>();
             ObservableList<Employee> data = FXCollections.observableArrayList();
 
             while (rs.next()) {
-//                Employee employee = new Employee(); 
-//                employee.id = rs.getString("Emp_ID");
-//                employee.name = rs.getString("Emp_Name");
-//                employee.phone = rs.getString("Emp_Phone");
-//                employee.address = rs.getString("Emp_Address");
-//                employee.salary = rs.getInt("Emp_Salary");
-//                employee.shiftTime = rs.getString("Shift_Time");
-//
-//                System.out.println(Employee.id);
-//                System.out.println(Employee.name);
-//                System.out.println(Employee.phone);
-//                System.out.println(Employee.address);
-//                System.out.println(Employee.salary);
-//                System.out.println(Employee.shiftTime);
 
                 data.add(new Employee(
                         rs.getString("Emp_ID"), 
@@ -73,10 +60,7 @@ public class Employee_Table_ViewController implements Initializable {
                         rs.getString("Shift_Time")
                 ));
         }
-            for(Employee d: data){
-            
-            table.setItems(data);
-            }
+           
             
             
              } catch (SQLException ex) {
