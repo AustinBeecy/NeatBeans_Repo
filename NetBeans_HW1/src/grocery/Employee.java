@@ -11,7 +11,7 @@ public class Employee {
     private String name;
     private String phone;
     private String address;
-    private int salary;
+    private double salary;
     private String shiftTime;
     public Employee(){
         
@@ -58,7 +58,7 @@ public class Employee {
         this.address = address;
     }
 
-    public int getSalary() {
+    public double getSalary() {
         return this.salary;
     }
 
