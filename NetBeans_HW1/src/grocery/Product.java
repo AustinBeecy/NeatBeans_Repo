@@ -7,12 +7,14 @@ public class Product {
     String name; 
     Double price;
     String description;
+    String supID; 
     
-    public Product(String id, String name, Double price, String description){
+    public Product(String id, String name, Double price, String description, String supID){
         this.productID = id;
         this.name = name;
         this.price = price; 
         this.description = description; 
+        this.supID = supID; 
     }
     
  public String getProductID()
@@ -44,5 +46,11 @@ public class Product {
    }
    public String getName(){
        return this.name; 
+   }
+   public void setSupID(String supID){
+       this.supID = supID; 
+   }
+   public String getSupID(){
+       return this.supID; 
    }
 }
