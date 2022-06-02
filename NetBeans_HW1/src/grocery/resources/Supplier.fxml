@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grocery.resources.SupplierController">
+   <children>
+      <TableView editable="true" layoutX="3.0" prefHeight="300.0" prefWidth="397.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columns>
+          <TableColumn prefWidth="52.0" text="ID" />
+          <TableColumn prefWidth="98.0" text="NAME" />
+            <TableColumn prefWidth="108.0" text="Address" />
+            <TableColumn prefWidth="108.0" text="S_Name" />
+            <TableColumn prefWidth="108.0" text="S_Phone" />
+            <TableColumn prefWidth="125.0" text="S_Email" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
