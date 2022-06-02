@@ -39,8 +39,6 @@ public class StorePickController implements Initializable {
     public GridPane gridPane;
     Statement stmt;
     static Connection conn;
-    static String currentStore = "";
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -60,15 +58,15 @@ public class StorePickController implements Initializable {
              // add Styling to button
              SceneController sc = new SceneController(); 
              button.setOnAction(e -> {
-                System.out.println("Need to find out how to changes scenes via controllers");
+                
                  try {
+                     Store.currentStore = button.getText();
                      sc.switchScene(e,welcomeFXML);
                  } catch (IOException ex) {
                      Logger.getLogger(StorePickController.class.getName()).log(Level.SEVERE, null, ex);
                  }
              });
                
-  
              gridPane.add(text, 1, i);
              i++;
              gridPane.add(button, 1, i);
@@ -79,5 +77,4 @@ public class StorePickController implements Initializable {
          }
 
     }
-
 }

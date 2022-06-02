@@ -28,19 +28,6 @@ import oracle.jdbc.pool.OracleDataSource;
 // always present them with a list of records to select from FIRST, so that they can indicate what record (product, employee, etc.) to change, 
 // then populate a data entry form with that info, allowing them to only change the 1 or 2 fields they want to edit, then save.
 public class SwitchScene1 extends Application {
-
-    Statement stmt;
-    static Connection conn;
-
-    static Connection conOracle(String id, String pw) throws Exception {
-        String connectionString = "jdbc:oracle:thin:@localhost:1521:XE";
-        OracleDataSource ds = new OracleDataSource();
-        ds.setURL(connectionString);
-        return ds.getConnection(id, pw);
-    }
-
-    Stage window = new Stage();
-
     @Override
     public void start(Stage primaryStage) throws IOException, Exception {
 

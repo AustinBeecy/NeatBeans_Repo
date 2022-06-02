@@ -6,7 +6,9 @@ package grocery.resources;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.text.Text;
 
 /**
  * FXML Controller class
@@ -18,9 +20,18 @@ public class WelcomeController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    @FXML
+    Text currentStore = null; 
+    SceneController sc = new SceneController(); 
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        setCurrentStore(); 
+        System.out.println(currentStore);
     }    
-    
+    public void setCurrentStore(){
+        this.currentStore.setText(Store.currentStore);
+    }
+  
 }
