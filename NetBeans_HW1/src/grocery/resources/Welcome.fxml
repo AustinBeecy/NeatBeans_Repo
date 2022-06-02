@@ -29,27 +29,27 @@
                   <Font size="40.0" />
                </font>
             </Text>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="17.0" prefWidth="177.0" text="Employees" textAlignment="CENTER" GridPane.rowIndex="1">
+            <Button fx:id="emp_button" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="17.0" prefWidth="177.0" text="Employees" textAlignment="CENTER" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="200.0" />
                </GridPane.margin>
             </Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="17.0" prefWidth="177.0" text="Products" textAlignment="CENTER" GridPane.rowIndex="2">
+            <Button fx:id="prod_button" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="17.0" prefWidth="177.0" text="Products" textAlignment="CENTER" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="200.0" />
                </GridPane.margin>
             </Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="17.0" prefWidth="177.0" text="Store Areas" textAlignment="CENTER" GridPane.rowIndex="3">
+            <Button fx:id="sa_button" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="17.0" prefWidth="177.0" text="Store Areas" textAlignment="CENTER" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="200.0" />
                </GridPane.margin>
             </Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="17.0" prefWidth="177.0" text="Suppliers" textAlignment="CENTER" GridPane.rowIndex="4">
+            <Button fx:id="sup_button" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="17.0" prefWidth="177.0" text="Suppliers" textAlignment="CENTER" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets left="200.0" />
                </GridPane.margin>
             </Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="17.0" prefWidth="177.0" text="Inventory" textAlignment="CENTER" GridPane.rowIndex="5">
+            <Button fx:id="inv_button" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="17.0" prefWidth="177.0" text="Inventory" textAlignment="CENTER" GridPane.rowIndex="5">
                <GridPane.margin>
                   <Insets left="200.0" />
                </GridPane.margin>

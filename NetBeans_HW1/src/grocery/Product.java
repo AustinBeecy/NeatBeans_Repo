@@ -4,11 +4,13 @@ package grocery;
 
 public class Product {
     String productID;
+    String name; 
     Double price;
     String description;
     
-    public Product(String id, Double price, String description){
+    public Product(String id, String name, Double price, String description){
         this.productID = id;
+        this.name = name;
         this.price = price; 
         this.description = description; 
     }
@@ -36,5 +38,11 @@ public class Product {
    public void setDescription(String description)
    {
        this.description = description; 
+   }
+   public void setName(String name){
+       this.name = name; 
+   }
+   public String getName(){
+       return this.name; 
    }
 }

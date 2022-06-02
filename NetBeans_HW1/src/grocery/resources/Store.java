@@ -10,5 +10,5 @@ package grocery.resources;
  */
 
 public class Store {
-    public static String currentStore = "oops"; 
+    public static String currentStore = ""; 
 }

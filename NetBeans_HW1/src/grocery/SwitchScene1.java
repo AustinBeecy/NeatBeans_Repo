@@ -31,7 +31,7 @@ public class SwitchScene1 extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException, Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("resources/Products.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("resources/storePick.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Store Selection");

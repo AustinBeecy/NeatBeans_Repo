@@ -8,6 +8,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 
 /**
@@ -21,14 +22,28 @@ public class WelcomeController implements Initializable {
      * Initializes the controller class.
      */
     @FXML
-    Text currentStore = null; 
+    Text currentStore; 
+    
+    @FXML
+    Button emp_button; 
+    @FXML
+    Button prod_button; 
+    @FXML
+    Button sa_button; 
+    @FXML
+    Button sup_button; 
+    @FXML
+    Button inv_button; 
+    
     SceneController sc = new SceneController(); 
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         setCurrentStore(); 
-        System.out.println(currentStore);
+        SceneController sc = new SceneController();
+        emp_button.setOnAction(e -> sc.switchScene(e, "Employee_Table_View.fxml.fxml"));
+        prod_button.setOnAction(e -> sc.switchScene(e, "products.fxml"));
     }    
     public void setCurrentStore(){
         this.currentStore.setText(Store.currentStore);

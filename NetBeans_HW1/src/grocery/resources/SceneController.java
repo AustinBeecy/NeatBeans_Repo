@@ -6,6 +6,8 @@ package grocery.resources;
 
 import java.awt.Desktop.Action;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -22,13 +24,20 @@ public class SceneController {
     private Scene scene; 
     private Parent root; 
     
-    public void switchScene(ActionEvent event, String fxml) throws IOException {
+    public void switchScene(ActionEvent event, String fxml) {
        
-         Parent root = FXMLLoader.load(getClass().getResource(fxml));
-         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-         scene = new Scene(root);
-         stage.setScene(scene);
-         stage.show();
+         Parent root;
+        try {
+                root = FXMLLoader.load(getClass().getResource(fxml));
+                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+                
+        } catch (IOException ex) {
+            Logger.getLogger(SceneController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
     
 }

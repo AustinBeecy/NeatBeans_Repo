@@ -9,7 +9,7 @@
       <TableView fx:id="product_table" editable="true" layoutX="200.0" layoutY="85.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columns>
           <TableColumn fx:id="col_id" prefWidth="75.0" text="ID" />
-          <TableColumn prefWidth="75.0" text="Name" />
+          <TableColumn fx:id="col_name" prefWidth="75.0" text="Name" />
             <TableColumn fx:id="col_price" prefWidth="75.0" text="Price" />
             <TableColumn fx:id="col_description" prefWidth="287.0" text="Description" />
             <TableColumn prefWidth="87.0" text="Suppler ID" />
