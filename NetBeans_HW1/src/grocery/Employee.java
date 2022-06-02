@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package grocery;
 
 /**
@@ -10,13 +7,22 @@ package grocery;
  */
 public class Employee {
 
-    String id;
-    String name;
-    String phone;
-    String address;
-    int salary;
-    String shiftTime;
+    static String id;
+    static String name;
+    static String phone;
+    static String address;
+    static int salary;
+    static String shiftTime;
 
+    public Employee(String id, String name, String phone, String address, int salary, String shiftTime) {
+        this.id = id;
+        this.name = name;
+        this.phone = phone;
+        this.address = address;
+        this.salary = salary;
+        this.shiftTime = shiftTime;
+    }
+    
     //getters and setters for Employee Class
     public String getID() {
         return this.id;
