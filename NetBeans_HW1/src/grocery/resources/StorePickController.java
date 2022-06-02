@@ -43,31 +43,16 @@ public class StorePickController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-<<<<<<< Updated upstream
-        try {
-            // TODO
-            conn = conOracle("javauser", "javapass");
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            ResultSet store = stmt.executeQuery("select * from Store");
-            int i = 1;
-            String welcomeFXML = "resources/welcome.fxml";
-            while (store.next()) {
-                Text text = new Text(store.getString("State"));
-                // add styling to text
-                Button button = new Button(store.getString("City"));
-                // add Styling to button
-                SwitchScene1 ss = new SwitchScene1();
-                button.setOnAction(e -> {
-                    System.out.println("Need to find out how to changes scenes via controllers");
-                });
-=======
+
+     
          try {
              // TODO
-             conn = conOracle("javauser", "javapass");
-             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+             OracleInterface oracle = new OracleInterface();
+             conn = oracle.getConnection();
+             stmt = oracle.getStatement();
              ResultSet store = stmt.executeQuery("select * from Store");
              int i = 1; 
-             String welcomeFXML = "resources/welcome.fxml";
+             String welcomeFXML = "welcome.fxml";
              while(store.next()){
              Text text = new Text(store.getString("State"));
              // add styling to text
@@ -77,7 +62,7 @@ public class StorePickController implements Initializable {
              button.setOnAction(e -> {
                 System.out.println("Need to find out how to changes scenes via controllers");
                  try {
-                     sc.switchToWelcome(e, welcomeFXML);
+                     sc.switchScene(e,welcomeFXML);
                  } catch (IOException ex) {
                      Logger.getLogger(StorePickController.class.getName()).log(Level.SEVERE, null, ex);
                  }
@@ -92,23 +77,7 @@ public class StorePickController implements Initializable {
          } catch (Exception ex) {
              Logger.getLogger(StorePickController.class.getName()).log(Level.SEVERE, null, ex);
          }
->>>>>>> Stashed changes
-
-//                gridPane.add(text, 1, i);
-//                i++;
-//                gridPane.add(button, 1, i);
-//                i++;
-            }
-        } catch (Exception ex) {
-            Logger.getLogger(StorePickController.class.getName()).log(Level.SEVERE, null, ex);
-        }
 
     }
 
-    static Connection conOracle(String id, String pw) throws Exception {
-        String connectionString = "jdbc:oracle:thin:@localhost:1521:XE";
-        OracleDataSource ds = new OracleDataSource();
-        ds.setURL(connectionString);
-        return ds.getConnection(id, pw);
-    }
 }
