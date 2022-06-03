@@ -7,17 +7,17 @@ package grocery;
  */
 public class Employee {
 
-     String id;
-     String name;
+     String emp_id;
+     String emp_name;
      //String phone;
      String address;
      Double salary;
      String shiftTime;
     
     
-    public Employee(String id, String name, String address, Double salary, String shiftTime) {
-        this.id = id;
-        this.name = name;
+    public Employee(String emp_id, String emp_name, String address, Double salary, String shiftTime) {
+        this.emp_id = emp_id;
+        this.emp_name = emp_name;
         //this.phone = phone;
         this.address = address;
         this.salary = salary;
@@ -26,19 +26,19 @@ public class Employee {
     
     //getters and setters for Employee Class
     public String getID() {
-        return this.id;
+        return this.emp_id;
     }
 
     public void setID(String id) {
-        this.id = id;
+        this.emp_id = id;
     }
 
     public String name() {
-        return this.name;
+        return this.emp_name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.emp_name = name;
     }
 
 //    public String getPhone() {
@@ -73,8 +73,8 @@ public class Employee {
         this.shiftTime = shiftTime;
     }
     public void printEmp(){
-        System.out.println(id);
-        System.out.println(name);
+        System.out.println(emp_id);
+        System.out.println(emp_name);
         //System.out.println(phone);
         System.out.println(address);
         System.out.println(salary);

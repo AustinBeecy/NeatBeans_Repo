@@ -61,9 +61,7 @@ public class Employee_Table_ViewController implements Initializable {
         try {
             rs = stmt.executeQuery("select * from Employee");
             while (rs.next()) {
-                emps.add(new Employee( rs.getString("EMP_ID"), rs.getString("EMP_NAME"),  rs.getString("EMP_ADDRESS"), rs.getDouble("EMP_SALARY"), rs.getString("SHIFT_TIME")));
-                System.out.println(rs.getString("emp_id"));
-                System.out.println(rs.getString("emp_name"));
+                emps.add(new Employee(rs.getString("EMP_ID"), rs.getString("EMP_NAME"),  rs.getString("EMP_ADDRESS"), rs.getDouble("EMP_SALARY"), rs.getString("SHIFT_TIME")));
                 
             }
 
@@ -74,8 +72,8 @@ public class Employee_Table_ViewController implements Initializable {
             d.printEmp();
         }
         
-        col_emp_id.setCellValueFactory(new PropertyValueFactory<>("id"));
-        col_emp_name.setCellValueFactory(new PropertyValueFactory<>("name"));
+        col_emp_id.setCellValueFactory(new PropertyValueFactory<Employee, String>("emp_id"));
+        col_emp_name.setCellValueFactory(new PropertyValueFactory<>("emp_name"));
 //        col_phone.setCellValueFactory(new PropertyValueFactory<>("phone"));
         col_address.setCellValueFactory(new PropertyValueFactory<>("address"));
         col_salary.setCellValueFactory(new PropertyValueFactory<>("salary"));
