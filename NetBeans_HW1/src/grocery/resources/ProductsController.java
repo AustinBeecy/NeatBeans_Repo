@@ -41,11 +41,11 @@ public class ProductsController implements Initializable {
     @FXML 
     private TableColumn<Product, Double> col_price; 
     @FXML 
-    private TableColumn<Product, Double> col_name; 
+    private TableColumn<Product, String> col_name; 
     @FXML 
-    private TableColumn<Product, Double> col_supID; 
-//      @FXML 
-//    private TableColumn<Product, Double> col_areaID;
+    private TableColumn<Product, String> col_supID; 
+    @FXML 
+    private TableColumn<Product, String> col_areaID;
     
     ObservableList<Product> plist = FXCollections.observableArrayList();
     Connection conn; 
@@ -68,7 +68,7 @@ public class ProductsController implements Initializable {
             rs = stmt.executeQuery(queryString);
             
             while (rs.next()){
-                plist.add(new Product(rs.getString("PRODUCT_ID"), rs.getString("PRODUCT_NAME"), rs.getDouble("PRICE_PAID"), rs.getString("PRODUCT_DESC"), rs.getString("SUPP_ID")));
+                plist.add(new Product(rs.getString("PRODUCT_ID"), rs.getString("PRODUCT_NAME"), rs.getDouble("PRICE_PAID"), rs.getString("PRODUCT_DESC"), rs.getString("SUPP_ID"), rs.getString("AREA_ID")));
             }
             
         } catch (SQLException ex) {
@@ -80,7 +80,7 @@ public class ProductsController implements Initializable {
         col_price.setCellValueFactory(new PropertyValueFactory<>("price"));
         col_name.setCellValueFactory(new PropertyValueFactory<>("name"));
         col_supID.setCellValueFactory(new PropertyValueFactory<>("supID"));
-     //   col_areaID.setCellValueFactory(new PropertyValueFactory<>("areaID"));
+        col_areaID.setCellValueFactory(new PropertyValueFactory<>("areaID"));
         product_table.setItems(plist);
     }
 }
