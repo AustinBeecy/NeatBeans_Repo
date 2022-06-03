@@ -73,8 +73,9 @@ public class ProductsController implements Initializable {
         
         SceneController sc = new SceneController(); 
         back_button.setOnAction(e -> sc.switchScene(e, "welcome.fxml"));
-        cb_sup_id.getItems().addAll("Supp1", "Supp2"); // This is hard coded should be changed to a query to find all suppliers 
+        cb_sup_id.getItems().addAll("select supp_id from supplier"); // This is hard coded should be changed to a query to find all suppliers 
         cb_area_id.getItems().addAll("S1-1","S1-2","S1-3","S1-4","S1-5","S2-1","S2-2","S2-3","S2-4","S2-5","S2-6","S2-7","S2-8","S2-9" );// This is hard coded should be changed to a query to find all store areas  
+        // "select area_id from storearea" this is the query for above 
         OracleInterface oracle = new OracleInterface(); 
          conn = oracle.getConnection();
          stmt = oracle.getStatement();
