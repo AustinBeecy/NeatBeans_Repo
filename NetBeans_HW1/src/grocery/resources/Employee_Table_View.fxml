@@ -13,15 +13,15 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grocery.resources.Employee_Table_ViewController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grocery.resources.Employee_Table_ViewController">
    <children>
       <TableView fx:id="emp_table" editable="true" layoutY="129.0" prefHeight="273.0" prefWidth="590.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="129.0">
         <columns>
-          <TableColumn fx:id="col_name" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="col_emp_id" prefWidth="75.0" text="Id" />
+          <TableColumn fx:id="col_emp_name" prefWidth="75.0" text="Name" />
             <TableColumn fx:id="col_address" prefWidth="75.0" text="Address" />
             <TableColumn fx:id="col_salary" prefWidth="127.0" text="Salary" />
             <TableColumn fx:id="col_shiftTime" prefWidth="147.0" text="Shift Time" />
-            <TableColumn fx:id="col_id" prefWidth="75.0" text="Id" />
         </columns>
       </TableView>
       <GridPane layoutX="12.0" prefHeight="130.0" prefWidth="560.0">
