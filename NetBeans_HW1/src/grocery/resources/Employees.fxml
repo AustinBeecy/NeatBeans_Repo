@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grocery.resources.EmployeesController">
+   <children>
+      <TableView fx:id="emp_table" layoutY="132.0" prefHeight="268.0" prefWidth="600.0">
+        <columns>
+            <TableColumn fx:id="col_emp_id" prefWidth="75.0" text="ID" />
+            <TableColumn fx:id="col_emp_name" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="col_address" prefWidth="75.0" text="Address" />
+            <TableColumn fx:id="col_salary" prefWidth="75.0" text="Salary" />
+            <TableColumn fx:id="col_shiftTime" prefWidth="75.0" text="Shift" />
+        </columns>
+      </TableView>
+      <Button fx:id="back_button" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Back" />
+   </children>
+</AnchorPane>

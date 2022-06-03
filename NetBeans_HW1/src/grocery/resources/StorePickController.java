@@ -58,13 +58,9 @@ public class StorePickController implements Initializable {
              // add Styling to button
              SceneController sc = new SceneController(); 
              button.setOnAction(e -> {
-                
-//                 try {
+
                      Store.currentStore = button.getText();
                      sc.switchScene(e,welcomeFXML);
-//                 } catch (IOException ex) {
-//                     Logger.getLogger(StorePickController.class.getName()).log(Level.SEVERE, null, ex);
-//                 }
              });
                
              gridPane.add(text, 1, i);

@@ -42,7 +42,7 @@ public class WelcomeController implements Initializable {
         // TODO
         setCurrentStore(); 
         SceneController sc = new SceneController();
-        emp_button.setOnAction(e -> sc.switchScene(e, "employee_table_view.fxml"));
+        emp_button.setOnAction(e -> sc.switchScene(e, "employees.fxml"));
         prod_button.setOnAction(e -> sc.switchScene(e, "products.fxml"));
         sa_button.setOnAction(e -> sc.switchScene(e, "store_area.fxml"));
         sup_button.setOnAction(e -> sc.switchScene(e, "supplier.fxml"));

@@ -17,8 +17,8 @@
    <children>
       <TableView fx:id="product_table" editable="true" layoutX="2.0" layoutY="130.0" prefHeight="270.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="138.0">
         <columns>
-          <TableColumn fx:id="col_id" prefWidth="75.0" text="ID" />
-          <TableColumn fx:id="col_name" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="col_id" prefWidth="75.0" text="ID" />
+            <TableColumn fx:id="col_name" prefWidth="75.0" text="Name" />
             <TableColumn fx:id="col_price" prefWidth="75.0" text="Price" />
             <TableColumn fx:id="col_description" prefWidth="117.0" text="Description" />
             <TableColumn fx:id="col_supID" prefWidth="113.0" text="Suppler ID" />
