@@ -13,6 +13,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -29,6 +30,8 @@ public class SupplierController implements Initializable {
      */
     @FXML
     private TableView<Supplier> supplier_table; 
+    @FXML
+    Button back_button;
     @FXML
     private TableColumn<Supplier, String> col_supp_id; 
     @FXML 
@@ -50,7 +53,10 @@ public class SupplierController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         OracleInterface oracle = new OracleInterface(); 
-         conn = oracle.getConnection();
+        SceneController sc = new SceneController(); 
+        back_button.setOnAction(e -> sc.switchScene(e, "welcome.fxml")); 
+        
+        conn = oracle.getConnection();
          stmt = oracle.getStatement();
          ResultSet rs;
          String queryString = "select * from supplier where supplier.supp_id in " +

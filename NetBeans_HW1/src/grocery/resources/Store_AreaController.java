@@ -21,6 +21,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.Button;
 
 /**
  * FXML Controller class
@@ -29,6 +30,8 @@ public class Store_AreaController implements Initializable {
 
     @FXML
     private TableView<StoreArea> area_table;
+    @FXML
+    Button back_button;
     @FXML
     private TableColumn<StoreArea, String> col_area_id;
     @FXML
@@ -45,6 +48,9 @@ public class Store_AreaController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         OracleInterface oracle = new OracleInterface();
+        SceneController sc = new SceneController(); 
+        back_button.setOnAction(e -> sc.switchScene(e, "welcome.fxml"));
+        
         conn = oracle.getConnection();
         stmt = oracle.getStatement();
         ResultSet rs;
