@@ -18,55 +18,68 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
-/**
- * FXML Controller class
- *
- * @author black
- */
 public class Employee_Table_ViewController implements Initializable {
-    Connection conn; 
-    Statement stmt; 
-       @FXML
-        TableView<Employee> table;
-       
-       
-    /**
-     * Initializes the controller class.
-     */
+
+    Connection conn;
+    Statement stmt;
+
+    @FXML
+    TableView<Employee> table = new TableView<Employee>();
+
+    @FXML
+    private TableColumn<Employee, String> id;
+    @FXML
+    private TableColumn<Employee, String> name;
+    @FXML
+    private TableColumn<Employee, String> phone;
+    @FXML
+    private TableColumn<Employee, String> address;
+    @FXML
+    private TableColumn<Employee, Double> salary;
+    @FXML
+    private TableColumn<Employee, String> shiftTime;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-          OracleInterface oracle = new OracleInterface(); 
-         conn = oracle.getConnection();
-         stmt = oracle.getStatement();
-          ResultSet rs;
-        
-          try {
+        OracleInterface oracle = new OracleInterface();
+        conn = oracle.getConnection();
+        stmt = oracle.getStatement();
+        ResultSet rs;
+
+        ObservableList<Employee> data = FXCollections.observableArrayList();
+
+        try {
             rs = stmt.executeQuery("select * from Employee");
-       
-            table = new TableView<Employee>();
-            ObservableList<Employee> data = FXCollections.observableArrayList();
 
             while (rs.next()) {
 
                 data.add(new Employee(
-                        rs.getString("Emp_ID"), 
-                        rs.getString("Emp_Name"), 
+                        rs.getString("Emp_ID"),
+                        rs.getString("Emp_Name"),
                         rs.getString("Emp_Phone"),
                         rs.getString("Emp_Address"),
                         rs.getInt("Emp_Salary"),
                         rs.getString("Shift_Time")
                 ));
-        }
-           
-            
-            
-             } catch (SQLException ex) {
+            }
+
+        } catch (SQLException ex) {
             Logger.getLogger(Employee_Table_ViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-    }    
-    
+
+        id.setCellValueFactory(new PropertyValueFactory<>("id"));
+        name.setCellValueFactory(new PropertyValueFactory<>("name"));
+//        phone.setCellValueFactory(new PropertyValueFactory<>("phone"));
+//        address.setCellValueFactory(new PropertyValueFactory<>("address"));
+//        salary.setCellValueFactory(new PropertyValueFactory<>("salary"));
+//        shiftTime.setCellValueFactory(new PropertyValueFactory<>("shiftTime"));
+        table.setItems(data);
+
+    }
+
 }
