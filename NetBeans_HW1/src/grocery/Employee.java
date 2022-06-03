@@ -4,35 +4,35 @@ package grocery;
 
 public class Employee {
 
-     String empID;
-     String empName;
+     String empid;
+     String empname;
      String address;
      Double salary;
      String shift;
     
     
     public Employee(String emp_id, String emp_name, String address, Double salary, String shiftTime) {
-        this.empID = emp_id;
-        this.empName = emp_name;
+        this.empid = emp_id;
+        this.empname = emp_name;
         this.address = address;
         this.salary = salary;
         this.shift = shiftTime;
     }
     
     public String getID() {
-        return this.empID;
+        return this.empid;
     }
 
     public void setID(String id) {
-        this.empID = id;
+        this.empid = id;
     }
 
     public String name() {
-        return this.empName;
+        return this.empname;
     }
 
     public void setName(String name) {
-        this.empName = name;
+        this.empname = name;
     }
 
     public String getAddress() {
@@ -59,8 +59,8 @@ public class Employee {
         this.shift = shiftTime;
     }
     public void printEmp(){
-        System.out.println(empID);
-        System.out.println(empName);
+        System.out.println(empid);
+        System.out.println(empname);
         System.out.println(address);
         System.out.println(salary);
         System.out.println(shift);

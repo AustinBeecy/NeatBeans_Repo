@@ -36,8 +36,6 @@ public class Employee_Table_ViewController implements Initializable {
     private TableColumn<Employee, String> col_emp_id;
     @FXML
     private TableColumn<Employee, String> col_emp_name;
-//    @FXML
-//    private TableColumn<Employee, String> col_phone;
     @FXML
     private TableColumn<Employee, String> col_address;
     @FXML
@@ -72,12 +70,12 @@ public class Employee_Table_ViewController implements Initializable {
             d.printEmp();
         }
         
-        col_emp_id.setCellValueFactory(new PropertyValueFactory<Employee, String>("emp_id"));
-        col_emp_name.setCellValueFactory(new PropertyValueFactory<>("emp_name"));
-//        col_phone.setCellValueFactory(new PropertyValueFactory<>("phone"));
+        col_emp_id.setCellValueFactory(new PropertyValueFactory<>("empid"));
+        col_emp_name.setCellValueFactory(new PropertyValueFactory<>("empname"));
+
         col_address.setCellValueFactory(new PropertyValueFactory<>("address"));
         col_salary.setCellValueFactory(new PropertyValueFactory<>("salary"));
-        col_shiftTime.setCellValueFactory(new PropertyValueFactory<>("shiftTime"));
+        col_shiftTime.setCellValueFactory(new PropertyValueFactory<>("shift"));
         
         emp_table.setItems(emps);
 
