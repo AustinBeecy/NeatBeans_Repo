@@ -7,19 +7,18 @@ package grocery;
  */
 public class Employee {
 
-    private String id;
-    private String name;
-    private String phone;
-    private String address;
-    private double salary;
-    private String shiftTime;
-    public Employee(){
-        
-    }
-    public Employee(String id, String name, String phone, String address, int salary, String shiftTime) {
+     String id;
+     String name;
+     //String phone;
+     String address;
+     Double salary;
+     String shiftTime;
+    
+    
+    public Employee(String id, String name, String address, Double salary, String shiftTime) {
         this.id = id;
         this.name = name;
-        this.phone = phone;
+        //this.phone = phone;
         this.address = address;
         this.salary = salary;
         this.shiftTime = shiftTime;
@@ -42,13 +41,13 @@ public class Employee {
         this.name = name;
     }
 
-    public String getPhone() {
-        return this.phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
+//    public String getPhone() {
+//        return this.phone;
+//    }
+//
+//    public void setPhone(String phone) {
+//        this.phone = phone;
+//    }
 
     public String getAddress() {
         return this.address;
@@ -58,11 +57,11 @@ public class Employee {
         this.address = address;
     }
 
-    public double getSalary() {
+    public Double getSalary() {
         return this.salary;
     }
 
-    public void setSalary(int salary) {
+    public void setSalary(Double salary) {
         this.salary = salary;
     }
 
@@ -72,5 +71,13 @@ public class Employee {
 
     public void setShift(String shiftTime) {
         this.shiftTime = shiftTime;
+    }
+    public void printEmp(){
+        System.out.println(id);
+        System.out.println(name);
+        //System.out.println(phone);
+        System.out.println(address);
+        System.out.println(salary);
+        System.out.println(shiftTime);
     }
 }

@@ -18,6 +18,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -28,58 +29,58 @@ public class Employee_Table_ViewController implements Initializable {
     Statement stmt;
 
     @FXML
-    TableView<Employee> table = new TableView<Employee>();
-
+    TableView<Employee> emp_table;
     @FXML
-    private TableColumn<Employee, String> id;
+    Button back_button; 
     @FXML
-    private TableColumn<Employee, String> name;
+    private TableColumn<Employee, String> col_id;
     @FXML
-    private TableColumn<Employee, String> phone;
+    private TableColumn<Employee, String> col_name;
     @FXML
-    private TableColumn<Employee, String> address;
+//    private TableColumn<Employee, String> col_phone;
+//    @FXML
+    private TableColumn<Employee, String> col_address;
     @FXML
-    private TableColumn<Employee, Double> salary;
+    private TableColumn<Employee, Double> col_salary;
     @FXML
-    private TableColumn<Employee, String> shiftTime;
+    private TableColumn<Employee, String> col_shiftTime;
+    
+    ObservableList<Employee> emps = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        SceneController sc = new SceneController(); 
+        back_button.setOnAction(e -> sc.switchScene(e, "welcome.fxml"));
         OracleInterface oracle = new OracleInterface();
         conn = oracle.getConnection();
         stmt = oracle.getStatement();
         ResultSet rs;
-
-        ObservableList<Employee> data = FXCollections.observableArrayList();
+        
 
         try {
             rs = stmt.executeQuery("select * from Employee");
-
             while (rs.next()) {
-
-                data.add(new Employee(
-                        rs.getString("Emp_ID"),
-                        rs.getString("Emp_Name"),
-                        rs.getString("Emp_Phone"),
-                        rs.getString("Emp_Address"),
-                        rs.getInt("Emp_Salary"),
-                        rs.getString("Shift_Time")
-                ));
+                emps.add(new Employee( rs.getString("EMP_ID"), rs.getString("EMP_NAME"),  rs.getString("EMP_ADDRESS"), rs.getDouble("EMP_SALARY"), rs.getString("SHIFT_TIME")));
+                
             }
 
         } catch (SQLException ex) {
             Logger.getLogger(Employee_Table_ViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        id.setCellValueFactory(new PropertyValueFactory<>("id"));
-        name.setCellValueFactory(new PropertyValueFactory<>("name"));
-//        phone.setCellValueFactory(new PropertyValueFactory<>("phone"));
-//        address.setCellValueFactory(new PropertyValueFactory<>("address"));
-//        salary.setCellValueFactory(new PropertyValueFactory<>("salary"));
-//        shiftTime.setCellValueFactory(new PropertyValueFactory<>("shiftTime"));
-        table.setItems(data);
+        for(Employee d: emps){
+            d.printEmp();
+        }
+        
+        col_id.setCellValueFactory(new PropertyValueFactory<>("id"));
+        col_name.setCellValueFactory(new PropertyValueFactory<>("name"));
+//        col_phone.setCellValueFactory(new PropertyValueFactory<>("phone"));
+        col_address.setCellValueFactory(new PropertyValueFactory<>("address"));
+        col_salary.setCellValueFactory(new PropertyValueFactory<>("salary"));
+        col_shiftTime.setCellValueFactory(new PropertyValueFactory<>("shiftTime"));
+        
+        emp_table.setItems(emps);
 
     }
-
+   
 }
