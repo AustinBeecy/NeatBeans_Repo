@@ -55,6 +55,10 @@ public class EmployeesController implements Initializable {
         stmt = oracle.getStatement();
         ResultSet rs;
         
+//        String queryString = "select * from employee where employee.emp_id in" +
+//        "(select position.emp_id from position where position.store_id in" +
+//        "(select store_id from store where store.city = '" + Store.currentStore + "')))";
+        
 
         try {
             rs = stmt.executeQuery("select * from Employee");
@@ -67,15 +71,16 @@ public class EmployeesController implements Initializable {
             Logger.getLogger(ProductsController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        for(Employee d: emps){
-            d.printEmp();
-        }
+       for(Employee d: emps){
+           d.printEmp();
+     }
         
-        col_emp_id.setCellValueFactory(new PropertyValueFactory<>("emp_ID"));
-        col_emp_name.setCellValueFactory(new PropertyValueFactory<>("emp_name"));
+        col_emp_id.setCellValueFactory(new PropertyValueFactory<>("empID"));
+        col_emp_name.setCellValueFactory(new PropertyValueFactory<>("empName"));
         col_address.setCellValueFactory(new PropertyValueFactory<>("address"));
         col_salary.setCellValueFactory(new PropertyValueFactory<>("salary"));
         col_shiftTime.setCellValueFactory(new PropertyValueFactory<>("shift"));
+        
         emp_table.setItems(emps);
 
     }

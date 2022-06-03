@@ -23,16 +23,16 @@ public class Employee {
         return this.empID;
     }
 
-    public void setID(String id) {
-        this.empID = id;
+    public void setID(String empID) {
+        this.empID = empID;
     }
 
     public String name() {
         return this.empName;
     }
 
-    public void setName(String name) {
-        this.empName = name;
+    public void setName(String empName) {
+        this.empName = empName;
     }
 
     public String getAddress() {
