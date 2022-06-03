@@ -44,6 +44,8 @@ public class ProductsController implements Initializable {
     private TableColumn<Product, Double> col_name; 
     @FXML 
     private TableColumn<Product, Double> col_supID; 
+//      @FXML 
+//    private TableColumn<Product, Double> col_areaID;
     
     ObservableList<Product> plist = FXCollections.observableArrayList();
     Connection conn; 
@@ -78,6 +80,7 @@ public class ProductsController implements Initializable {
         col_price.setCellValueFactory(new PropertyValueFactory<>("price"));
         col_name.setCellValueFactory(new PropertyValueFactory<>("name"));
         col_supID.setCellValueFactory(new PropertyValueFactory<>("supID"));
+     //   col_areaID.setCellValueFactory(new PropertyValueFactory<>("areaID"));
         product_table.setItems(plist);
     }
 }

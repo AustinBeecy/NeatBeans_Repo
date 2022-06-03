@@ -8,6 +8,7 @@ public class Product {
     Double price;
     String description;
     String supID; 
+   // String areaID;
     
     public Product(String id, String name, Double price, String description, String supID){
         this.productID = id;
@@ -15,6 +16,7 @@ public class Product {
         this.price = price; 
         this.description = description; 
         this.supID = supID; 
+     //   this.areaID = areaID;
     }
     
  public String getProductID()
@@ -53,4 +55,10 @@ public class Product {
    public String getSupID(){
        return this.supID; 
    }
+//    public void setareaID(String areaID){
+//       this.areaID = areaID; 
+//   }
+//   public String getareaID(){
+//       return this.areaID; 
+//   }
 }
