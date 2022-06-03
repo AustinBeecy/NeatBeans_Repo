@@ -44,7 +44,7 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Area Name" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.columnIndex="4" GridPane.rowIndex="1" />
             <TextField prefHeight="25.0" prefWidth="3.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Area Description" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.rowIndex="2" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add Employee" textAlignment="CENTER" wrappingWidth="185.693359375" GridPane.columnIndex="2">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add Store Area" textAlignment="CENTER" wrappingWidth="185.693359375" GridPane.columnIndex="2">
                <font>
                   <Font size="20.0" />
                </font>
