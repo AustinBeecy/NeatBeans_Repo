@@ -71,8 +71,8 @@ public class EmployeesController implements Initializable {
             d.printEmp();
         }
         
-        col_emp_id.setCellValueFactory(new PropertyValueFactory<>("empID"));
-        col_emp_name.setCellValueFactory(new PropertyValueFactory<>("empName"));
+        col_emp_id.setCellValueFactory(new PropertyValueFactory<>("emp_ID"));
+        col_emp_name.setCellValueFactory(new PropertyValueFactory<>("emp_name"));
         col_address.setCellValueFactory(new PropertyValueFactory<>("address"));
         col_salary.setCellValueFactory(new PropertyValueFactory<>("salary"));
         col_shiftTime.setCellValueFactory(new PropertyValueFactory<>("shift"));
