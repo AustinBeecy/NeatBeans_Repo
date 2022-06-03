@@ -18,6 +18,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -34,6 +35,8 @@ public class ProductsController implements Initializable {
      */
     @FXML
     private TableView<Product> product_table; 
+    @FXML
+    Button back_button;
     @FXML
     private TableColumn<Product, String> col_description; 
     @FXML 
@@ -54,6 +57,9 @@ public class ProductsController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        SceneController sc = new SceneController(); 
+        back_button.setOnAction(e -> sc.switchScene(e, "welcome.fxml"));
+        
         OracleInterface oracle = new OracleInterface(); 
          conn = oracle.getConnection();
          stmt = oracle.getStatement();
