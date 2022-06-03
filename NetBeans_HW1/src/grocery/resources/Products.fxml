@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grocery.resources.ProductsController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grocery.resources.ProductsController">
    <children>
       <TableView fx:id="product_table" editable="true" layoutX="2.0" layoutY="130.0" prefHeight="270.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="138.0">
         <columns>
@@ -43,14 +43,14 @@
          </rowConstraints>
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="tf_id" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <TextField fx:id="tf_name" GridPane.columnIndex="3" GridPane.rowIndex="2" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Price" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-            <TextField prefHeight="25.0" prefWidth="3.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <TextField fx:id="tf_price" prefHeight="25.0" prefWidth="3.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Description" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.rowIndex="3" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier ID" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <ChoiceBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <ChoiceBox fx:id="cb_sup_id" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
             <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="106.0" text="Submit" GridPane.columnIndex="5" GridPane.rowIndex="3" />
             <Button fx:id="back_button" mnemonicParsing="false" text="Back" GridPane.rowIndex="1">
                <opaqueInsets>
@@ -62,10 +62,10 @@
                   <Font size="20.0" />
                </font>
             </Text>
-            <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="106.0" text="Submit" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-            <TextField layoutX="103.0" layoutY="63.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#onSubmit" prefHeight="23.0" prefWidth="106.0" text="Submit" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <TextField fx:id="tf_description" layoutX="103.0" layoutY="63.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Area ID" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.rowIndex="4" />
-            <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <ChoiceBox fx:id="cb_area_id" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
       </GridPane>
    </children>

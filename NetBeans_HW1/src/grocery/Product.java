@@ -9,7 +9,9 @@ public class Product {
     String description;
     String supID; 
     String areaID;
-    
+     public Product(){
+         
+     }
     public Product(String id, String name, Double price, String description, String supID, String areaID){
         this.productID = id;
         this.name = name;
@@ -60,5 +62,12 @@ public class Product {
    }
    public String getAreaID(){
        return this.areaID; 
+   }
+   public void printProduct(){
+       System.out.println(this.name);
+       System.out.println(this.productID);
+       System.out.println(this.price);
+       System.out.println(this.description);
+    
    }
 }
