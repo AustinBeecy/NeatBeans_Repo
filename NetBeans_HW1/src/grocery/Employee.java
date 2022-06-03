@@ -1,53 +1,39 @@
 
 package grocery;
 
-/**
- *
- * @author Jd3ab
- */
+
 public class Employee {
 
-     String emp_id;
-     String emp_name;
-     //String phone;
+     String empID;
+     String empName;
      String address;
      Double salary;
-     String shiftTime;
+     String shift;
     
     
     public Employee(String emp_id, String emp_name, String address, Double salary, String shiftTime) {
-        this.emp_id = emp_id;
-        this.emp_name = emp_name;
-        //this.phone = phone;
+        this.empID = emp_id;
+        this.empName = emp_name;
         this.address = address;
         this.salary = salary;
-        this.shiftTime = shiftTime;
+        this.shift = shiftTime;
     }
     
-    //getters and setters for Employee Class
     public String getID() {
-        return this.emp_id;
+        return this.empID;
     }
 
     public void setID(String id) {
-        this.emp_id = id;
+        this.empID = id;
     }
 
     public String name() {
-        return this.emp_name;
+        return this.empName;
     }
 
     public void setName(String name) {
-        this.emp_name = name;
+        this.empName = name;
     }
-
-//    public String getPhone() {
-//        return this.phone;
-//    }
-//
-//    public void setPhone(String phone) {
-//        this.phone = phone;
-//    }
 
     public String getAddress() {
         return this.address;
@@ -66,18 +52,17 @@ public class Employee {
     }
 
     public String getShift() {
-        return this.shiftTime;
+        return this.shift;
     }
 
     public void setShift(String shiftTime) {
-        this.shiftTime = shiftTime;
+        this.shift = shiftTime;
     }
     public void printEmp(){
-        System.out.println(emp_id);
-        System.out.println(emp_name);
-        //System.out.println(phone);
+        System.out.println(empID);
+        System.out.println(empName);
         System.out.println(address);
         System.out.println(salary);
-        System.out.println(shiftTime);
+        System.out.println(shift);
     }
 }

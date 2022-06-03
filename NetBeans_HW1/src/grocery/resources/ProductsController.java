@@ -23,16 +23,10 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-/**
- * FXML Controller class
- *
- * @author black
- */
+
 public class ProductsController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+
     @FXML
     private TableView<Product> product_table; 
     @FXML
@@ -57,18 +51,19 @@ public class ProductsController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
         SceneController sc = new SceneController(); 
         back_button.setOnAction(e -> sc.switchScene(e, "welcome.fxml"));
-        
         OracleInterface oracle = new OracleInterface(); 
          conn = oracle.getConnection();
          stmt = oracle.getStatement();
          ResultSet rs;
+         
          String queryString = "select * from product where product.product_id in " +
             "(select inventory.product_id from inventory where inventory.area_id in " +
             "(select storeArea.area_id from storeArea where storeArea.store_id in " +
             "(select store_id from store where store.city = '" + Store.currentStore + "')))";
-         System.out.println(queryString);
+         
          
         try {
             rs = stmt.executeQuery(queryString);
