@@ -12,14 +12,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="grocery.resources.InventoryController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grocery.resources.InventoryController">
    <children>
-      <TableView fx:id="emp_table" editable="true" layoutX="10.0" layoutY="139.0" prefHeight="273.0" prefWidth="590.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="130.0">
+      <TableView fx:id="inv_table" editable="true" layoutX="10.0" layoutY="139.0" prefHeight="273.0" prefWidth="590.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="130.0">
          <columns>
-            <TableColumn fx:id="col_emp_id" prefWidth="75.0" text="Id" />
-            <TableColumn fx:id="col_emp_name" prefWidth="75.0" text="Product ID" />
-            <TableColumn fx:id="col_address" prefWidth="75.0" text="Quantity" />
+            <TableColumn fx:id="col_area_id" prefWidth="75.0" text="Id" />
+            <TableColumn fx:id="col_prod_id" prefWidth="133.0" text="Product ID" />
+            <TableColumn fx:id="col_product_q" prefWidth="94.0" text="Quantity" />
          </columns>
       </TableView>
       <GridPane layoutX="22.0" layoutY="10.0" prefHeight="130.0" prefWidth="560.0" AnchorPane.topAnchor="0.0">
