@@ -46,11 +46,11 @@ public class Store_AreaController implements Initializable {
      @FXML 
     private TextField tf_areaID;
     @FXML 
+    private TextField tf_aisle;
+    @FXML 
     private TextField tf_areaName;
     @FXML 
-    private TextField tf_salary;
-    @FXML 
-    private ChoiceBox cb_shift;
+    private TextField tf_Description;
 
     ObservableList<StoreArea> alist = FXCollections.observableArrayList();
     Connection conn;
