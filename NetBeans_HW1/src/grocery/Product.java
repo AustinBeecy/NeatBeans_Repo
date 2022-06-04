@@ -1,7 +1,9 @@
 
 package grocery;
 
-
+/*
+ * The Product class containing the constructor and getters/setters
+*/
 public class Product {
     Integer productID;
     String name; 

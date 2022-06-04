@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
+
 package grocery.resources;
 
 import java.net.URL;
@@ -11,11 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 
-/**
- * FXML Controller class
- *
- * @author Jd3ab
- */
+
 public class WelcomeController implements Initializable {
 
     /**
@@ -24,6 +17,7 @@ public class WelcomeController implements Initializable {
     @FXML
     Text currentStore; 
     
+    // Navigation buttons within Welcome screen for choosing what data to select
     @FXML
     Button emp_button; 
     @FXML
@@ -39,7 +33,7 @@ public class WelcomeController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        // Switches scenes based on the button pressed
         setCurrentStore(); 
         SceneController sc = new SceneController();
         emp_button.setOnAction(e -> sc.switchScene(e, "Employee_Table_View.fxml"));
@@ -49,7 +43,7 @@ public class WelcomeController implements Initializable {
         inv_button.setOnAction(e -> sc.switchScene(e, "inventory.fxml"));
     }    
     public void setCurrentStore(){
-        this.currentStore.setText(Store.currentStore);
+        this.currentStore.setText(Store.currentStore); // Sets the current store based on the store selection
     }
   
 }

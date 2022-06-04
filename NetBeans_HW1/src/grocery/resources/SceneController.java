@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package grocery.resources;
 
 import java.awt.Desktop.Action;
@@ -16,23 +13,23 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- *
- * @author Jd3ab
+ * Scene controller class allows for switching between scenes on button press
  */
 public class SceneController {
     private Stage stage; 
     private Scene scene; 
     private Parent root; 
     
+    // SwitchScene is called in different places with an ActionEvent and desired fxml screen to switch to for that button press
     public void switchScene(ActionEvent event, String fxml) {
        
-         Parent root;
+        Parent root;
         try {
-                root = FXMLLoader.load(getClass().getResource(fxml));
+                root = FXMLLoader.load(getClass().getResource(fxml)); // Gets the FXML resource
                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 scene = new Scene(root);
                 stage.setScene(scene);
-                stage.show();
+                stage.show(); // Displays new scene
                 
         } catch (IOException ex) {
             Logger.getLogger(SceneController.class.getName()).log(Level.SEVERE, null, ex);

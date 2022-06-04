@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package grocery.resources;
 
 import grocery.SwitchScene1;
@@ -29,9 +25,7 @@ import javafx.stage.Stage;
 import oracle.jdbc.pool.OracleDataSource;
 
 /**
- * FXML Controller class
- *
- * @author Jd3ab
+ * StorePickController class contains implementation for the first screen the user will see
  */
 public class StorePickController implements Initializable {
 
@@ -39,38 +33,36 @@ public class StorePickController implements Initializable {
     public GridPane gridPane;
     Statement stmt;
     static Connection conn;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-     
-         try {
-             // TODO
-             OracleInterface oracle = new OracleInterface();
-             conn = oracle.getConnection();
-             stmt = oracle.getStatement();
-             ResultSet store = stmt.executeQuery("select * from Store");
-             int i = 1; 
-             String welcomeFXML = "welcome.fxml";
-             while(store.next()){
-             Text text = new Text(store.getString("State"));
-             // add styling to text
-             Button button = new Button(store.getString("City"));
-             // add Styling to button
-             SceneController sc = new SceneController(); 
-             button.setOnAction(e -> {
+        try {
+            OracleInterface oracle = new OracleInterface();
+            conn = oracle.getConnection();
+            stmt = oracle.getStatement();
+            ResultSet store = stmt.executeQuery("select * from Store"); // Query to select everything from store table
+            int i = 1;
+            String welcomeFXML = "welcome.fxml";
+            while (store.next()) {
+                Text text = new Text(store.getString("State")); // Create text that will pull state from database
+                Button button = new Button(store.getString("City")); // Create button that will pull city from database
+                
+                SceneController sc = new SceneController(); 
+                button.setOnAction(e -> {
 
-                     Store.currentStore = button.getText();
-                     sc.switchScene(e,welcomeFXML);
-             });
-               
-             gridPane.add(text, 1, i);
-             i++;
-             gridPane.add(button, 1, i);
-             i++; 
-             }
-         } catch (Exception ex) {
-             Logger.getLogger(StorePickController.class.getName()).log(Level.SEVERE, null, ex);
-         }
+                    Store.currentStore = button.getText(); // Sets the current store depending on which button is pressed
+                    sc.switchScene(e, welcomeFXML); // Calls switchscene and switches to welcomeFXML
+                });
+
+                gridPane.add(text, 1, i); // Adds text and buttons to grid
+                i++;
+                gridPane.add(button, 1, i);
+                i++;
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(StorePickController.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
 }

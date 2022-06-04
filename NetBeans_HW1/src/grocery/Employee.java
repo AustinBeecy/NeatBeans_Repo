@@ -4,6 +4,9 @@ package grocery;
 import javafx.beans.property.*;
 import java.sql.Date;
 
+/*
+The Employee class containing the constructor and getters/setters
+*/
 public class Employee {
 
      String empid;

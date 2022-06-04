@@ -1,13 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package grocery;
 
-/**
- *
- * @author Jd3ab
- */
+/*
+ * The Supplier class containing the constructor and getters/setters
+*/
 public class Supplier {
 
     private String id;

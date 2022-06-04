@@ -1,10 +1,9 @@
 
 package grocery;
 
-/**
- *
- * @author Jd3ab
- */
+/*
+ * The Position class containing getters/setters
+*/
 public class Position {
     String empId; 
     String areaId; 

@@ -42,13 +42,11 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.rowIndex="2" />
-            <TextField fx:id="tf_id" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <TextField fx:id="tf_name" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.rowIndex="2" />
+            <TextField fx:id="tf_name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Price" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.columnIndex="4" GridPane.rowIndex="2" />
             <TextField fx:id="tf_price" prefHeight="25.0" prefWidth="3.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Description" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.rowIndex="3" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Description" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier ID" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.columnIndex="2" GridPane.rowIndex="3" />
             <ChoiceBox fx:id="cb_sup_id" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
             <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="106.0" text="Submit" GridPane.columnIndex="5" GridPane.rowIndex="3" />
@@ -63,9 +61,9 @@
                </font>
             </Text>
             <Button mnemonicParsing="false" onAction="#onSubmit" prefHeight="23.0" prefWidth="106.0" text="Submit" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-            <TextField fx:id="tf_description" layoutX="103.0" layoutY="63.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Area ID" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.rowIndex="4" />
-            <ChoiceBox fx:id="cb_area_id" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="tf_description" layoutX="103.0" layoutY="63.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Area ID" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.rowIndex="3" />
+            <ChoiceBox fx:id="cb_area_id" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
    </children>

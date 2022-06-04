@@ -22,16 +22,14 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import oracle.jdbc.pool.OracleDataSource;
 
-// For ID numbers, when CREATING a new record, always let the system create the ID number for the user. 
-// Never let the User choose what ID number to type in for a new record (as this can cause DB disaster!).
-// Try to never have the user type in an ID number for any kind of selection. Remember that when giving the user the choice to edit a record, 
-// always present them with a list of records to select from FIRST, so that they can indicate what record (product, employee, etc.) to change, 
-// then populate a data entry form with that info, allowing them to only change the 1 or 2 fields they want to edit, then save.
+/*
+ * The SwitchScene class sets the main FXML screen and stage
+*/
 public class SwitchScene1 extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException, Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("resources/storePick.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("resources/storePick.fxml")); //Sets main fxml screen
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Store Selection");

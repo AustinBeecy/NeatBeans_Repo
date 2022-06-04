@@ -1,14 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package grocery;
 
-/**
- *
- * @author black
- */
+/*
+ * The StoreArea class containing the constructor and getters/setters
+*/
 public class StoreArea {
 
     String areaID;

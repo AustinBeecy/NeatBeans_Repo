@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package grocery.resources;
 
 import java.sql.Connection;
@@ -13,8 +10,7 @@ import java.util.logging.Logger;
 import oracle.jdbc.pool.OracleDataSource;
 
 /**
- *
- * @author Jd3ab
+ * OracleInterface class which keeps the oracle username, password, and other database access information
  */
 public class OracleInterface {
     
@@ -23,7 +19,7 @@ public class OracleInterface {
     
     OracleInterface(){
         try {
-            conn = conOracle("javauser", "javapass");
+            conn = conOracle("javauser", "javapass"); // Specifies username and password
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
         } catch (SQLException ex) {
             Logger.getLogger(OracleInterface.class.getName()).log(Level.SEVERE, null, ex);
@@ -34,7 +30,7 @@ public class OracleInterface {
         String connectionString = "jdbc:oracle:thin:@localhost:1521:XE";
         OracleDataSource ds = new OracleDataSource();
         ds.setURL(connectionString);
-        return ds.getConnection(id, pw);
+        return ds.getConnection(id, pw); // Username and password passed
     }
    
   public Connection getConnection(){

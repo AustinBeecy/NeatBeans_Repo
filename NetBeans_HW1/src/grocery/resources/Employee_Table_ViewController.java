@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package grocery.resources;
 
 import grocery.Employee;
@@ -25,6 +21,10 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+/*
+ * The Employee Controller class contains everything for creating the employee table and populating employee data
+*/
+
 public class Employee_Table_ViewController implements Initializable {
 
     Connection conn;
@@ -45,6 +45,7 @@ public class Employee_Table_ViewController implements Initializable {
     @FXML
     private TableColumn<Employee, String> col_shiftTime;
     
+    // TextFields to use for implementation of adding entries
 //    @FXML 
 //    private TextField tf_name;
 //    @FXML 
@@ -53,9 +54,7 @@ public class Employee_Table_ViewController implements Initializable {
 //    private TextField tf_salary;
 //    @FXML 
 //    private ChoiceBox cb_shift;
-    
-    
-    
+
     
     ObservableList<Employee> emps = FXCollections.observableArrayList();
 
@@ -63,18 +62,17 @@ public class Employee_Table_ViewController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         SceneController sc = new SceneController(); 
-        back_button.setOnAction(e -> sc.switchScene(e, "welcome.fxml"));
+        back_button.setOnAction(e -> sc.switchScene(e, "welcome.fxml")); // Back button to switch scene
         OracleInterface oracle = new OracleInterface();
         conn = oracle.getConnection();
         stmt = oracle.getStatement();
         ResultSet rs;
         
-
+        // Pulls data from database into list
         try {
             rs = stmt.executeQuery("select * from Employee");
             while (rs.next()) {
-                emps.add(new Employee(rs.getString("EMP_ID"), rs.getString("EMP_NAME"),  rs.getString("EMP_ADDRESS"), rs.getDouble("EMP_SALARY"), rs.getString("SHIFT_TIME")));
-                
+                emps.add(new Employee(rs.getString("EMP_ID"), rs.getString("EMP_NAME"),  rs.getString("EMP_ADDRESS"), rs.getDouble("EMP_SALARY"), rs.getString("SHIFT_TIME")));   
             }
 
         } catch (SQLException ex) {
@@ -84,6 +82,7 @@ public class Employee_Table_ViewController implements Initializable {
             d.printEmp();
         }
         
+        // Set all values into the tables
         col_emp_id.setCellValueFactory(new PropertyValueFactory<>("empid"));
         col_emp_name.setCellValueFactory(new PropertyValueFactory<>("empname"));
         col_address.setCellValueFactory(new PropertyValueFactory<>("address"));

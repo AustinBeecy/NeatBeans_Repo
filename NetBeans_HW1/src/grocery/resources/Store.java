@@ -1,14 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package grocery.resources;
 
 /**
- *
- * @author Jd3ab
+  * Store class used to set the current store
  */
 
 public class Store {
-    public static String currentStore = ""; 
+    public static String currentStore = ""; // Is called when selecting store in order to set the current store
 }

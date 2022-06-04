@@ -1,9 +1,8 @@
 package grocery;
 
-/**
- *
- * @author Jd3ab
- */
+/*
+ * The Inventory class containing the constructor and getters/setters
+*/
 public class Inventory {
 
     String areaID;
