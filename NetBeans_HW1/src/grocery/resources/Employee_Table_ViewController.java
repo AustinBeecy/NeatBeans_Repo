@@ -45,14 +45,14 @@ public class Employee_Table_ViewController implements Initializable {
     @FXML
     private TableColumn<Employee, String> col_shiftTime;
     
-    @FXML 
-    private TextField tf_name;
-    @FXML 
-    private TextField tf_address;
-    @FXML 
-    private TextField tf_salary;
-    @FXML 
-    private ChoiceBox cb_shift;
+//    @FXML 
+//    private TextField tf_name;
+//    @FXML 
+//    private TextField tf_address;
+//    @FXML 
+//    private TextField tf_salary;
+//    @FXML 
+//    private ChoiceBox cb_shift;
     
     
     
@@ -86,13 +86,10 @@ public class Employee_Table_ViewController implements Initializable {
         
         col_emp_id.setCellValueFactory(new PropertyValueFactory<>("empid"));
         col_emp_name.setCellValueFactory(new PropertyValueFactory<>("empname"));
-
         col_address.setCellValueFactory(new PropertyValueFactory<>("address"));
         col_salary.setCellValueFactory(new PropertyValueFactory<>("salary"));
         col_shiftTime.setCellValueFactory(new PropertyValueFactory<>("shift"));
-        
         emp_table.setItems(emps);
-
     }
    
 }

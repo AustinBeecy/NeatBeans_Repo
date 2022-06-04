@@ -46,20 +46,17 @@ public class SupplierController implements Initializable {
     private TableColumn<Supplier, String> col_con_phone; 
     @FXML 
     private TableColumn<Supplier, String> col_con_email;
-    
     @FXML
-    private TextField tf_supID; 
+    private TextField tf_id; 
     @FXML
-    private TextField tf_supName;
+    private TextField tf_name; 
     @FXML
-    private TextField tf_supAdress;
+    private TextField tf_address; 
     @FXML
-    private TextField tf_conName;
+    private TextField tf_email; 
     @FXML
-    private ChoiceBox cb_conPhone; 
-    @FXML
-    private ChoiceBox cb_conEmail; 
-    
+    private TextField tf_phone; 
+
     ObservableList<Supplier> slist = FXCollections.observableArrayList();
     Connection conn; 
     Statement stmt; 
@@ -85,12 +82,12 @@ public class SupplierController implements Initializable {
             
             while (rs.next()){
                 slist.add(new Supplier(
-                        rs.getString("Supp_ID"), 
+                        rs.getString("SUPP_ID"), 
                         rs.getString("SUPP_NAME"), 
                         rs.getString("SUPP_ADDRESS"), 
-                        rs.getString("Sales_Contact_Name"), 
-                        rs.getString("Sales_Contact_Phone"), 
-                        rs.getString("Sales_Contact_Email")));
+                        rs.getString("SALES_CONTACT_NAME"), 
+                        rs.getString("SALES_CONTACT_PHONE"), 
+                        rs.getString("SALES_CONTACT_EMAIL")));
             }
             
         } catch (SQLException ex) {

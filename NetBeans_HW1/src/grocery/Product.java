@@ -3,7 +3,7 @@ package grocery;
 
 
 public class Product {
-    String productID;
+    Integer productID;
     String name; 
     Double price;
     String description;
@@ -12,7 +12,7 @@ public class Product {
      public Product(){
          
      }
-    public Product(String id, String name, Double price, String description, String supID, String areaID){
+    public Product(Integer id, String name, Double price, String description, String supID, String areaID){
         this.productID = id;
         this.name = name;
         this.price = price; 
@@ -21,11 +21,11 @@ public class Product {
         this.areaID = areaID;
     }
     
- public String getProductID()
+ public Integer getProductID()
    {
      return this.productID;
    }
-   public void setProductID(String productID)
+   public void setProductID(Integer productID)
    {
        this.productID = productID;     
     }

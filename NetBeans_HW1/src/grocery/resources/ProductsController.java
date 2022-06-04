@@ -39,7 +39,7 @@ public class ProductsController implements Initializable {
     @FXML
     private TableColumn<Product, String> col_description; 
     @FXML 
-    private TableColumn<Product, String> col_id; 
+    private TableColumn<Product, Integer> col_id; 
     @FXML 
     private TableColumn<Product, Double> col_price; 
     @FXML 
@@ -61,7 +61,7 @@ public class ProductsController implements Initializable {
     @FXML
     private ChoiceBox cb_area_id; 
     
-   int idCount = 0;
+    int idCount = 1;
      
     ObservableList<Product> plist = FXCollections.observableArrayList();
     Connection conn; 
@@ -70,14 +70,14 @@ public class ProductsController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        ResultSet rs;
+        
         
         String findStoreID = "select Store_ID from Store where store.city = '" + Store.currentStore + "'";
         String allAreas = "select area_id from StoreArea where StoreArea.Store_ID = '" + findStoreID + "'";
         
         SceneController sc = new SceneController(); 
         back_button.setOnAction(e -> sc.switchScene(e, "welcome.fxml"));
-        cb_sup_id.getItems().addAll("select supp_id from supplier"); // This is hard coded should be changed to a query to find all suppliers 
+        cb_sup_id.getItems().addAll("Sup1"); // This is hard coded should be changed to a query to find all suppliers 
         
         
 //         try {
@@ -92,22 +92,58 @@ public class ProductsController implements Initializable {
 
         cb_area_id.getItems().addAll("S1-1","S1-2","S1-3","S1-4","S1-5","S2-1","S2-2","S2-3","S2-4","S2-5","S2-6","S2-7","S2-8","S2-9" );// This is hard coded should be changed to a query to find all store areas  
         // "select area_id from storearea" this is the query for above 
-        OracleInterface oracle = new OracleInterface(); 
+        
+        updateTable(); 
+      
+     
+    }
+    
+  
+
+    public void onSubmit(){
+        
+        //check to make sure none are empty 
+        
+        System.out.println(tf_id.getText());
+        System.out.println(tf_name.getText());
+        System.out.println(tf_description.getText());
+        System.out.println(tf_price.getText());
+        System.out.println(cb_sup_id.getValue());
+        System.out.println(cb_area_id.getValue());
+        System.out.println("YOUR COUNT IS" + idCount);
+        String statement = "INSERT INTO Product (Product_ID, Product_Name, Area_ID, Supp_ID, Price_Paid, Product_Desc) VALUES (" + idCount + ", '" + tf_name.getText() +"', '" + cb_area_id.getValue() +"', '" + cb_sup_id.getValue() + "', " + tf_price.getText() + ", '" + tf_description.getText() + "')";
+        System.out.println(statement);
+        try{
+            stmt.executeUpdate(statement);
+            updateTable(); 
+            /////USE THESE VALUES TO MAKE AN UPDATE QUERY THEN REFRESH THE SCENCE
+            // Then look up how to update table View
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductsController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+    public void updateTable(){
+        
+         OracleInterface oracle = new OracleInterface(); 
          conn = oracle.getConnection();
          stmt = oracle.getStatement();
-         
+         plist.clear();
+         ResultSet rs;
+         getNextID();
          String queryString = "select * from product where product.product_id in " +
             "(select inventory.product_id from inventory where inventory.area_id in " +
             "(select storeArea.area_id from storeArea where storeArea.store_id in " +
             "(select store_id from store where store.city = '" + Store.currentStore + "')))";
          
         try {
-            rs = stmt.executeQuery(queryString);
+            rs = stmt.executeQuery("select * from product");
             while (rs.next()){
-                plist.add(new Product(rs.getString("PRODUCT_ID"), rs.getString("PRODUCT_NAME"), rs.getDouble("PRICE_PAID"), rs.getString("PRODUCT_DESC"), rs.getString("SUPP_ID"), rs.getString("AREA_ID")));
-                ++idCount;
+                plist.add(new Product(rs.getInt("PRODUCT_ID"), rs.getString("PRODUCT_NAME"), rs.getDouble("PRICE_PAID"), rs.getString("PRODUCT_DESC"), rs.getString("SUPP_ID"), rs.getString("AREA_ID")));
+             
             }
-            
+
+            rs.close();
             
         } catch (SQLException ex) {
             Logger.getLogger(ProductsController.class.getName()).log(Level.SEVERE, null, ex);
@@ -119,25 +155,24 @@ public class ProductsController implements Initializable {
         col_name.setCellValueFactory(new PropertyValueFactory<>("name"));
         col_supID.setCellValueFactory(new PropertyValueFactory<>("supID"));
         col_areaID.setCellValueFactory(new PropertyValueFactory<>("areaID"));
-        product_table.setItems(plist);
-    
-      String statement = "INSERT INTO Product ("+ "Product_ID, Product_Name, Area_ID, Supp_ID, Price_Paid, Product_Desc) VALUES (" + "'S " + idCount + "', '" + tf_name.getText() + "', '" + cb_area_id.getValue() + "', '" + cb_sup_id.getValue() + "', " + tf_price.getText() + ", '" + tf_description.getText() + "');";
-     
+        product_table.setItems(plist); 
+        product_table.refresh();
     }
-    
-  
-
-    public void onSubmit(){
-        
-        System.out.println(tf_id.getText());
-        System.out.println(tf_name.getText());
-        System.out.println(tf_description.getText());
-        System.out.println(tf_price.getText());
-        System.out.println(cb_sup_id.getValue());
-        System.out.println(cb_area_id.getValue());
-        
-        /////USE THESE VALUES TO MAKE AN UPDATE QUERY THEN REFRESH THE SCENCE 
-        // Then look up how to update table View
-
+   public void getNextID(){
+        OracleInterface oracle = new OracleInterface(); 
+         conn = oracle.getConnection();
+         stmt = oracle.getStatement();
+         ResultSet rs;
+         try {
+            rs = stmt.executeQuery("select * from product");
+            while (rs.next()){
+               idCount = rs.getInt("PRODUCT_ID");
+            }
+            ++idCount;
+            rs.close();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductsController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
