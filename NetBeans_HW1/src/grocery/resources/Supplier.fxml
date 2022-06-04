@@ -41,9 +41,9 @@
          </rowConstraints>
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier Name" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <TextField fx:id="tf_supName" GridPane.columnIndex="3" GridPane.rowIndex="1" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Address" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-            <TextField prefHeight="25.0" prefWidth="3.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <TextField fx:id="tf_supAdress" prefHeight="25.0" prefWidth="3.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Contact Name" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.rowIndex="1" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Contact Phone" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.columnIndex="2" GridPane.rowIndex="3" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add Supplier" textAlignment="CENTER" wrappingWidth="185.693359375" GridPane.columnIndex="3">
@@ -57,10 +57,10 @@
                   <Insets left="20.0" />
                </opaqueInsets>
             </Button>
-            <TextField layoutX="103.0" layoutY="63.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <TextField fx:id="tf_conName" layoutX="103.0" layoutY="63.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="cb_conPhone" GridPane.columnIndex="3" GridPane.rowIndex="3" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ContactEmail" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.rowIndex="3" />
-            <TextField layoutX="103.0" layoutY="80.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="cb_conEmail" layoutX="103.0" layoutY="80.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
    </children>
