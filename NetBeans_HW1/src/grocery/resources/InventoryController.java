@@ -19,8 +19,10 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
@@ -43,6 +45,13 @@ public class InventoryController implements Initializable {
     @FXML 
     private TableColumn<Inventory, Integer> col_product_q; 
 
+    @FXML
+    private TextField tf_aId; 
+    @FXML
+    private TextField tf_pId;
+    @FXML
+    private TextField tf_pQuantity;
+   
     
     ObservableList<Inventory> ilist = FXCollections.observableArrayList();
     Connection conn; 

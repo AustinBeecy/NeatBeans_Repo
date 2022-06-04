@@ -14,8 +14,10 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
@@ -44,6 +46,19 @@ public class SupplierController implements Initializable {
     private TableColumn<Supplier, String> col_con_phone; 
     @FXML 
     private TableColumn<Supplier, String> col_con_email;
+    
+    @FXML
+    private TextField tf_supID; 
+    @FXML
+    private TextField tf_supName;
+    @FXML
+    private TextField tf_supAdress;
+    @FXML
+    private TextField tf_conName;
+    @FXML
+    private ChoiceBox cb_conPhone; 
+    @FXML
+    private ChoiceBox cb_conEmail; 
     
     ObservableList<Supplier> slist = FXCollections.observableArrayList();
     Connection conn; 

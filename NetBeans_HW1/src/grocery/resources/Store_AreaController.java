@@ -6,6 +6,7 @@
 package grocery.resources;
 
 import grocery.StoreArea;
+import java.awt.TextField;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -22,6 +23,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 
 /**
  * FXML Controller class
@@ -40,6 +42,15 @@ public class Store_AreaController implements Initializable {
     private TableColumn<StoreArea, String> col_aisle;
     @FXML
     private TableColumn<StoreArea, String> col_area_desc;
+    
+     @FXML 
+    private TextField tf_areaID;
+    @FXML 
+    private TextField tf_areaName;
+    @FXML 
+    private TextField tf_salary;
+    @FXML 
+    private ChoiceBox cb_shift;
 
     ObservableList<StoreArea> alist = FXCollections.observableArrayList();
     Connection conn;

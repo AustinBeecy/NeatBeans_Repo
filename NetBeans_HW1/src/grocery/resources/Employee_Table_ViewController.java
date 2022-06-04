@@ -6,6 +6,7 @@
 package grocery.resources;
 
 import grocery.Employee;
+import java.awt.TextField;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -19,6 +20,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -42,6 +44,18 @@ public class Employee_Table_ViewController implements Initializable {
     private TableColumn<Employee, Double> col_salary;
     @FXML
     private TableColumn<Employee, String> col_shiftTime;
+    
+    @FXML 
+    private TextField tf_name;
+    @FXML 
+    private TextField tf_address;
+    @FXML 
+    private TextField tf_salary;
+    @FXML 
+    private ChoiceBox cb_shift;
+    
+    
+    
     
     ObservableList<Employee> emps = FXCollections.observableArrayList();
 
