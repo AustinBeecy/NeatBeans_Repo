@@ -14,11 +14,11 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grocery.resources.InventoryController">
    <children>
-      <TableView fx:id="inv_table" editable="true" layoutX="10.0" layoutY="139.0" prefHeight="273.0" prefWidth="590.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="130.0">
+      <TableView fx:id="inv_table" editable="true" layoutX="10.0" layoutY="139.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="130.0">
          <columns>
-            <TableColumn fx:id="col_area_id" prefWidth="75.0" text="Id" />
-            <TableColumn fx:id="col_prod_id" prefWidth="133.0" text="Product ID" />
-            <TableColumn fx:id="col_product_q" prefWidth="94.0" text="Quantity" />
+            <TableColumn fx:id="col_area_id" prefWidth="121.0" text="Area ID" />
+            <TableColumn fx:id="col_prod_id" prefWidth="141.0" text="Product ID" />
+            <TableColumn fx:id="col_product_q" prefWidth="134.0" text="Quantity" />
          </columns>
       </TableView>
       <GridPane layoutX="22.0" layoutY="10.0" prefHeight="130.0" prefWidth="560.0" AnchorPane.topAnchor="0.0">
@@ -42,7 +42,7 @@
             <TextField GridPane.columnIndex="3" GridPane.rowIndex="1" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.columnIndex="4" GridPane.rowIndex="1" />
             <TextField prefHeight="25.0" prefWidth="3.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Inventory" textAlignment="CENTER" wrappingWidth="185.693359375" GridPane.columnIndex="2">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Inventory" textAlignment="CENTER" wrappingWidth="185.693359375" GridPane.columnIndex="3">
                <font>
                   <Font size="20.0" />
                </font>

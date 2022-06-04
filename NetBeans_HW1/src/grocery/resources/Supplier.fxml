@@ -14,17 +14,17 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grocery.resources.SupplierController">
    <children>
-      <TableView fx:id="supplier_table" editable="true" layoutX="3.0" prefHeight="300.0" prefWidth="397.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="135.0">
+      <TableView fx:id="supplier_table" editable="true" layoutY="178.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="260.0" prefWidth="800.0" AnchorPane.bottomAnchor="-3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="178.0">
         <columns>
           <TableColumn fx:id="col_supp_id" prefWidth="52.0" text="ID" />
-          <TableColumn fx:id="col_supp_name" prefWidth="98.0" text="NAME" />
-            <TableColumn fx:id="col_supp_address" prefWidth="108.0" text="Address" />
-            <TableColumn fx:id="col_con_name" prefWidth="108.0" text="S_Name" />
-            <TableColumn fx:id="col_con_phone" prefWidth="108.0" text="S_Phone" />
-            <TableColumn fx:id="col_con_email" prefWidth="125.0" text="S_Email" />
+          <TableColumn fx:id="col_supp_name" prefWidth="118.0" text="Supplier" />
+            <TableColumn fx:id="col_supp_address" prefWidth="168.0" text="Address" />
+            <TableColumn fx:id="col_con_name" prefWidth="126.0" text="Contact Name" />
+            <TableColumn fx:id="col_con_phone" prefWidth="164.0" text="Contact Phone" />
+            <TableColumn fx:id="col_con_email" prefWidth="171.0" text="Contact Email" />
         </columns>
       </TableView>
-      <GridPane layoutX="22.0" layoutY="10.0" prefHeight="125.0" prefWidth="560.0">
+      <GridPane layoutX="22.0" layoutY="10.0" prefHeight="150.0" prefWidth="560.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -40,15 +40,13 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier ID" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier Name" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <TextField GridPane.columnIndex="3" GridPane.rowIndex="1" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Address" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.columnIndex="4" GridPane.rowIndex="1" />
             <TextField prefHeight="25.0" prefWidth="3.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sales Name" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.rowIndex="2" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sales Phone" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add Suuplier" textAlignment="CENTER" wrappingWidth="185.693359375" GridPane.columnIndex="2">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Contact Name" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.rowIndex="1" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Contact Phone" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add Supplier" textAlignment="CENTER" wrappingWidth="185.693359375" GridPane.columnIndex="3">
                <font>
                   <Font size="20.0" />
                </font>
@@ -59,9 +57,9 @@
                   <Insets left="20.0" />
                </opaqueInsets>
             </Button>
-            <TextField layoutX="103.0" layoutY="63.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sales Email" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.rowIndex="3" />
+            <TextField layoutX="103.0" layoutY="63.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ContactEmail" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.rowIndex="3" />
             <TextField layoutX="103.0" layoutY="80.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>

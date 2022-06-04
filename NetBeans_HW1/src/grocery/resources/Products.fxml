@@ -13,16 +13,16 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grocery.resources.ProductsController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grocery.resources.ProductsController">
    <children>
-      <TableView fx:id="product_table" editable="true" layoutX="2.0" layoutY="130.0" prefHeight="270.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="138.0">
+      <TableView fx:id="product_table" editable="true" layoutX="2.0" layoutY="130.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="138.0">
         <columns>
             <TableColumn fx:id="col_id" prefWidth="75.0" text="ID" />
-            <TableColumn fx:id="col_name" prefWidth="75.0" text="Name" />
-            <TableColumn fx:id="col_price" prefWidth="75.0" text="Price" />
-            <TableColumn fx:id="col_description" prefWidth="117.0" text="Description" />
-            <TableColumn fx:id="col_supID" prefWidth="113.0" text="Suppler ID" />
-            <TableColumn fx:id="col_areaID" prefWidth="113.0" text="Area ID" />
+            <TableColumn fx:id="col_name" prefWidth="178.0" text="Name" />
+            <TableColumn fx:id="col_price" prefWidth="105.0" text="Price" />
+            <TableColumn fx:id="col_description" prefWidth="226.0" text="Description" />
+            <TableColumn fx:id="col_supID" prefWidth="117.0" text="Suppler ID" />
+            <TableColumn fx:id="col_areaID" prefWidth="98.0" text="Area ID" />
         </columns>
       </TableView>
       <GridPane layoutX="22.0" layoutY="10.0" prefHeight="125.0" prefWidth="560.0">
@@ -57,7 +57,7 @@
                   <Insets left="20.0" />
                </opaqueInsets>
             </Button>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add Products" textAlignment="CENTER" wrappingWidth="185.693359375" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add Products" textAlignment="CENTER" wrappingWidth="185.693359375" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <font>
                   <Font size="20.0" />
                </font>

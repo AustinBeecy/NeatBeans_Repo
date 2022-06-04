@@ -14,12 +14,12 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="grocery.resources.Store_AreaController">
    <children>
-      <TableView fx:id="area_table" editable="true" layoutX="200.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="135.0">
+      <TableView fx:id="area_table" editable="true" layoutY="174.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="800.0" AnchorPane.bottomAnchor="-39.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="174.0">
         <columns>
-          <TableColumn fx:id="col_area_id" prefWidth="85.0" text="Area ID" />
-          <TableColumn fx:id="col_aisle" prefWidth="126.0" text="Aisle Number" />
-            <TableColumn fx:id="col_area_name" prefWidth="116.0" text="Area Name" />
-            <TableColumn fx:id="col_area_desc" prefWidth="107.0" text="Area Desc" />
+          <TableColumn fx:id="col_area_id" prefWidth="84.0" text="Area ID" />
+          <TableColumn fx:id="col_aisle" prefWidth="127.0" text="Aisle Number" />
+            <TableColumn fx:id="col_area_name" prefWidth="144.0" text="Area Name" />
+            <TableColumn fx:id="col_area_desc" prefWidth="444.0" text="Area Desc" />
         </columns>
       </TableView>
       <GridPane layoutX="22.0" layoutY="10.0" prefHeight="130.0" prefWidth="560.0">
@@ -44,7 +44,7 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Area Name" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.columnIndex="4" GridPane.rowIndex="1" />
             <TextField prefHeight="25.0" prefWidth="3.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Area Description" textAlignment="CENTER" wrappingWidth="99.693359375" GridPane.rowIndex="2" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add Store Area" textAlignment="CENTER" wrappingWidth="185.693359375" GridPane.columnIndex="2">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add Store Area" textAlignment="CENTER" wrappingWidth="185.693359375" GridPane.columnIndex="3">
                <font>
                   <Font size="20.0" />
                </font>
